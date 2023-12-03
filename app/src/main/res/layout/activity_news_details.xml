@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Image View -->
+        <ImageView
+            android:id="@+id/newsDescImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:contentDescription="Description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/strange" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/newsDescTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newsDescImage"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:text="Title"
+            android:textSize="18sp" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/newsDescDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newsDescTitle"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:text="Date"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+        <!-- Content -->
+        <TextView
+            android:id="@+id/newsDescContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newsDescDate"
+            android:padding="8dp"
+            android:text="Article content goes here."
+            android:textSize="16sp" />
+    </RelativeLayout>
+</ScrollView>
