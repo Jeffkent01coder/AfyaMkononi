@@ -1,11 +1,17 @@
 package com.example.afyamkononi.fragments
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
+import android.icu.util.Calendar
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearSnapHelper
 import com.example.afyamkononi.databinding.FragmentScheduleBinding
 import java.text.SimpleDateFormat
 import java.util.*
@@ -13,21 +19,12 @@ import java.util.*
 
 class ScheduleFragment : Fragment() {
     private lateinit var binding: FragmentScheduleBinding
+    lateinit var tvDate: TextView
+    lateinit var btnshowdatepicker: Button
 
-    private val lastDayInCalendar = Calendar.getInstance(Locale.ENGLISH)
-    private val sdf = SimpleDateFormat("MMMM yyyy", Locale.ENGLISH)
-    private val cal = Calendar.getInstance(Locale.ENGLISH)
+    @RequiresApi(Build.VERSION_CODES.N)
+    private val calendar = Calendar.getInstance()
 
-    private val currentDate = Calendar.getInstance(Locale.ENGLISH)
-    private val currentDay = currentDate[Calendar.DAY_OF_MONTH]
-    private val currentMonth = currentDate[Calendar.MONTH]
-    private val currentYear = currentDate[Calendar.YEAR]
-
-    private var selectedDay: Int = currentDay
-    private var selectedMonth: Int = currentMonth
-    private var selectedYear: Int = currentYear
-
-    private val dates = ArrayList<Date>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,49 +34,52 @@ class ScheduleFragment : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        tvDate = binding.tvSelectDate
+        btnshowdatepicker = binding.btnshowDatePicker
 
-        val snapHelper = LinearSnapHelper()
-        snapHelper.attachToRecyclerView(binding.calendarRecyclerView)
+        btnshowdatepicker.setOnClickListener {
+            showDatePicker()
+        }
 
-        lastDayInCalendar.add(Calendar.MONTH, 6)
+        val btnPickTime = binding.btnPickTime
+        val tvTime = binding.tvTime
+
+        btnPickTime.setOnClickListener {
+            val cal = java.util.Calendar.getInstance()
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
+                cal.set(Calendar.HOUR_OF_DAY, hour)
+                cal.set(Calendar.HOUR_OF_DAY, minute)
+                tvTime.text = SimpleDateFormat("HH:mm").format(cal.time)
+            }
+            TimePickerDialog(
+                requireActivity(),
+                timeSetListener,
+                cal.get(Calendar.HOUR_OF_DAY),
+                cal.get(Calendar.MINUTE),
+                true
+            ).show()
+        }
 
     }
 
-    private fun setUpCalendar(changeMonth: Calendar? = null) {
-        // first part
-        binding.txtCurrentMonth.text = sdf.format(cal.time)
-        val monthCalendar = cal.clone() as Calendar
-        val maxDaysInMonth = cal.getActualMaximum(Calendar.DAY_OF_MONTH)
-
-        selectedDay =
-            when {
-                changeMonth != null -> changeMonth.getActualMinimum(Calendar.DAY_OF_MONTH)
-                else -> currentDay
-            }
-        selectedMonth =
-            when {
-                changeMonth != null -> changeMonth[Calendar.MONTH]
-                else -> currentMonth
-            }
-        selectedYear =
-            when {
-                changeMonth != null -> changeMonth[Calendar.YEAR]
-                else -> currentYear
-            }
-
-        // second part
-        var currentPosition = 0
-        dates.clear()
-        monthCalendar.set(Calendar.DAY_OF_MONTH, 1)
-
-        while (dates.size < maxDaysInMonth) {
-            if (monthCalendar[Calendar.DAY_OF_MONTH] == selectedDay)
-                currentPosition = dates.size
-            dates.add(monthCalendar.time)
-            monthCalendar.add(Calendar.DAY_OF_MONTH, 1)
-        }
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun showDatePicker() {
+        val datePickerDialog = DatePickerDialog(
+            requireActivity(), { DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int ->
+                val selectedDate = Calendar.getInstance()
+                selectedDate.set(year, monthOfYear, dayOfMonth)
+                val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val formattedDate: String = dateFormat.format(selectedDate.time)
+                tvDate.text = "Selected Date is  : " + formattedDate
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+        datePickerDialog.show()
     }
 
 

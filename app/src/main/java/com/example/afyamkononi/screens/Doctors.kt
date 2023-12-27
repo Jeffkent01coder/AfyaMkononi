@@ -1,11 +1,21 @@
 package com.example.afyamkononi.screens
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.afyamkononi.R
+import com.example.afyamkononi.adapters.DoctorsAdapter
 import com.example.afyamkononi.databinding.ActivityDoctorsBinding
+import com.example.afyamkononi.model.DoctorData
 
-class Doctors : AppCompatActivity() {
+class Doctors : AppCompatActivity(), DoctorsAdapter.OnDoctorClickListener {
     private lateinit var binding: ActivityDoctorsBinding
+
+    private lateinit var adapter: DoctorsAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var doctorsArrayList: ArrayList<DoctorData>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityDoctorsBinding.inflate(layoutInflater)
@@ -14,6 +24,34 @@ class Doctors : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        dataInitialize()
+        val layoutManager = LinearLayoutManager(this)
+        recyclerView = binding.doctorsRecyler
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+        adapter = DoctorsAdapter(doctorsArrayList, this)
+        recyclerView.adapter = adapter
+        adapter.notifyDataSetChanged()
+
+
+    }
+
+    override fun onDoctorClick(doctor: DoctorData, position: Int) {
+        Toast.makeText(this, "Doctor clicked", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun dataInitialize() {
+        doctorsArrayList = arrayListOf(
+            DoctorData(R.drawable.docs, "Sean Leaky", "Cardiologist"),
+            DoctorData(R.drawable.doc1, "Peter Onfroy", "Therapist"),
+            DoctorData(R.drawable.doc2, "Jesica Onfroy", "General Doctor"),
+            DoctorData(R.drawable.docs, "Jeff Leaky", "Massagist"),
+            DoctorData(R.drawable.doc1, "Sean Mendes", "Pediatrician"),
+            DoctorData(R.drawable.doc2, "Lackytisa Leaky", "Radiologist"),
+            DoctorData(R.drawable.docs, "Megan Leaky", "Cardiologist"),
+            DoctorData(R.drawable.doc1, "Rod Wave", "Therapist"),
+
+            )
     }
 
 
