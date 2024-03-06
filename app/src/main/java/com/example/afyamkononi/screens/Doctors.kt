@@ -42,14 +42,14 @@ class Doctors : AppCompatActivity(), DoctorsAdapter.OnDoctorClickListener {
 
     private fun dataInitialize() {
         doctorsArrayList = arrayListOf(
-            DoctorData(R.drawable.docs, "Sean Leaky", "Cardiologist"),
-            DoctorData(R.drawable.doc1, "Peter Onfroy", "Therapist"),
-            DoctorData(R.drawable.doc2, "Jesica Onfroy", "General Doctor"),
-            DoctorData(R.drawable.docs, "Jeff Leaky", "Massagist"),
-            DoctorData(R.drawable.doc1, "Sean Mendes", "Pediatrician"),
-            DoctorData(R.drawable.doc2, "Lackytisa Leaky", "Radiologist"),
-            DoctorData(R.drawable.docs, "Megan Leaky", "Cardiologist"),
-            DoctorData(R.drawable.doc1, "Rod Wave", "Therapist"),
+            DoctorData(R.drawable.docsimage, "Sean Leaky", "Cardiologist"),
+            DoctorData(R.drawable.docsimage, "Peter Onfroy", "Therapist"),
+            DoctorData(R.drawable.docsimage, "Jesica Onfroy", "General Doctor"),
+            DoctorData(R.drawable.docsimage, "Jeff Leaky", "Massagist"),
+            DoctorData(R.drawable.docsimage, "Sean Mendes", "Pediatrician"),
+            DoctorData(R.drawable.docsimage, "Lackytisa Leaky", "Radiologist"),
+            DoctorData(R.drawable.docsimage, "Megan Leaky", "Cardiologist"),
+            DoctorData(R.drawable.docsimage, "Rod Wave", "Therapist"),
 
             )
     }

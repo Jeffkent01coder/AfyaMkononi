@@ -1,14 +1,14 @@
 package com.example.afyamkononi.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.afyamkononi.R
 
 
-class ReportFragment : Fragment() {
+class NotificationFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,7 +16,8 @@ class ReportFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_report, container, false)
+        return inflater.inflate(R.layout.fragment_notification, container, false)
     }
+
 
 }

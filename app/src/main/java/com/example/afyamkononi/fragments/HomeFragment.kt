@@ -72,14 +72,14 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
 
     private fun dataInitialize() {
         eventArrayList = arrayListOf(
-            EventData(R.drawable.doc1, "Dr Sean Leaky", "Heart Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
-            EventData(R.drawable.doc2, "Dr Sean Leaky", "Mental Checkup","Weiwaei Way","12:00 - 14:00","13/23/2023"),
-            EventData(R.drawable.doc1, "Dr Sean Leaky", "Tummy Checkup","Waiyaki Way","12:00 - 15:00","13/23/2023"),
-            EventData(R.drawable.doc2, "Dr Sean Leaky", "Skin Checkup","Waiyaki Way","12:00 - 12:00","13/23/2023"),
-            EventData(R.drawable.doc1, "Dr Sean Leaky", "Heart Checkup","Waiyaki Way","21:00 - 22:00","13/23/2023"),
-            EventData(R.drawable.doc2, "Dr Sean Leaky", "head Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
-            EventData(R.drawable.doc1, "Dr Sean Leaky", "Heart Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
-            EventData(R.drawable.doc2, "Dr Sean Leaky", "Bank Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
+            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Heart Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
+            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Mental Checkup","Weiwaei Way","12:00 - 14:00","13/23/2023"),
+            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Tummy Checkup","Waiyaki Way","12:00 - 15:00","13/23/2023"),
+            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Skin Checkup","Waiyaki Way","12:00 - 12:00","13/23/2023"),
+            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Heart Checkup","Waiyaki Way","21:00 - 22:00","13/23/2023"),
+            EventData(R.drawable.docsimage, "Dr Sean Leaky", "head Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
+            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Heart Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
+            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Bank Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
 
         )}
 
