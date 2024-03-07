@@ -12,7 +12,7 @@ import com.example.afyamkononi.model.EventData
 import kotlin.random.Random
 
 class EventsAdapter(
-    private val list: ArrayList<EventData>,
+    private val list: MutableList<EventData>,
     val clickListener: OnEventClickListener
 ) :
     RecyclerView.Adapter<EventsAdapter.EventsViewHolder>() {
