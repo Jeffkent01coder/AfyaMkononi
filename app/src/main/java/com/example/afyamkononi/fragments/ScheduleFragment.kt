@@ -95,7 +95,7 @@ class ScheduleFragment : Fragment() {
                 selectedDate.set(year, monthOfYear, dayOfMonth)
                 val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
                 val formattedDate: String = dateFormat.format(selectedDate.time)
-                tvDate.text = "Selected Date is  : " + formattedDate
+                tvDate.text = formattedDate
             },
             calendar.get(Calendar.YEAR),
             calendar.get(Calendar.MONTH),

@@ -22,7 +22,6 @@ class EventsAdapter(
         fun setData(event: EventData, action: OnEventClickListener) {
             eventItemBinding.apply {
                 personMeet.text = event.eventName
-                event.image.let { anyImage.setImageResource(it) }
                 appointmentTitle.text = event.eventReason
                 eventLocation.text = event.eventLocation
                 eventTime.text = event.eventTime
