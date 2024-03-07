@@ -226,6 +226,31 @@
 
         </LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "Up-Coming Events : "
+            android:layout_marginStart="30dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "Past Events "
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_marginStart="30dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pastEventsRecyclerView"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            tools:listitem="@layout/event_item"
+            android:layout_height="match_parent"
+            />
+
 
     </LinearLayout>
 

@@ -18,6 +18,7 @@ import com.example.afyamkononi.screens.*
 import com.google.firebase.Firebase
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
+import java.util.*
 
 class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
     private lateinit var binding: FragmentHomeBinding
@@ -80,22 +81,10 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
 
     }
 
-//    private fun dataInitialize() {
-//        eventArrayList = arrayListOf(
-//            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Heart Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
-//            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Mental Checkup","Weiwaei Way","12:00 - 14:00","13/23/2023"),
-//            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Tummy Checkup","Waiyaki Way","12:00 - 15:00","13/23/2023"),
-//            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Skin Checkup","Waiyaki Way","12:00 - 12:00","13/23/2023"),
-//            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Heart Checkup","Waiyaki Way","21:00 - 22:00","13/23/2023"),
-//            EventData(R.drawable.docsimage, "Dr Sean Leaky", "head Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
-//            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Heart Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
-//            EventData(R.drawable.docsimage, "Dr Sean Leaky", "Bank Checkup","Waiyaki Way","12:00 - 14:00","13/23/2023"),
-//
-//        )}
-
     override fun onEventClick(event: EventData, position: Int) {
-        Toast.makeText(requireActivity(),"Event clicked", Toast.LENGTH_LONG).show()
+        Toast.makeText(requireActivity(), "Event clicked", Toast.LENGTH_LONG).show()
     }
+
 
     @SuppressLint("NotifyDataSetChanged")
     private fun getEvents() {
@@ -105,14 +94,24 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
                 for (jobSnapshot in dataSnapshot.children) {
                     val id = jobSnapshot.child("id").getValue(String::class.java)
                     val personMeet = jobSnapshot.child("personMeet").getValue(String::class.java)
-                    val appointmentTitle = jobSnapshot.child("appointmentTitle").getValue(String::class.java)
-                    val eventLocation = jobSnapshot.child("eventLocation").getValue(String::class.java)
+                    val appointmentTitle =
+                        jobSnapshot.child("appointmentTitle").getValue(String::class.java)
+                    val eventLocation =
+                        jobSnapshot.child("eventLocation").getValue(String::class.java)
                     val tvTime = jobSnapshot.child("tvTime").getValue(String::class.java)
-                    val tvSelectDate = jobSnapshot.child("tvSelectDate").getValue(String::class.java)
+                    val tvSelectDate =
+                        jobSnapshot.child("tvSelectDate").getValue(String::class.java)
                     val uid = jobSnapshot.child("uid").getValue(String::class.java)
 
                     if (id != null && personMeet != null && appointmentTitle != null && eventLocation != null && tvTime != null && tvSelectDate != null && uid != null) {
-                        val event = EventData(id, personMeet, appointmentTitle, eventLocation, tvTime, tvSelectDate)
+                        val event = EventData(
+                            id,
+                            personMeet,
+                            appointmentTitle,
+                            eventLocation,
+                            tvTime,
+                            tvSelectDate
+                        )
                         eventArrayList.add(event)
                     }
                 }
