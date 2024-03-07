@@ -19,6 +19,7 @@ Afya Mkononi is a mobile application designed to provide users with health-relat
 - **Community Forums**: Engage in discussions with other users, ask questions, and share experiences in a supportive community environment.
 
 - **Personal Health Records**: Store and manage personal health records securely within the app.
+- **Machine image recognition** : Scan images and provides results for the processed images
 
 ## Technologies Used
 
