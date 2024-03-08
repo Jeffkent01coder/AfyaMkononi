@@ -17,14 +17,14 @@
         android:theme="@style/Theme.AfyaMkononi"
         tools:targetApi="31">
         <activity
-            android:name=".Fitness"
+            android:name=".screens.Fitness"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".HospitalsGPS"
+            android:name=".screens.HospitalsGPS"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

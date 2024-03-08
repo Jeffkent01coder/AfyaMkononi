@@ -64,6 +64,11 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
             startActivity(intent)
         }
 
+        binding.fitness.setOnClickListener {
+            val intent = Intent(requireActivity(), Fitness::class.java)
+            startActivity(intent)
+        }
+
         binding.profileImage.setOnClickListener {
             val intent = Intent(requireActivity(), Profile::class.java)
             startActivity(intent)
