@@ -89,13 +89,13 @@ class AddDoctor : AppCompatActivity() {
         val hashMap: HashMap<String, Any> = HashMap()
         hashMap["id"] = "$timeStamp"
         hashMap["uid"] = "$uid"
-        hashMap["personMeet"] = "$doctorName"
-        hashMap["appointmentTitle"] = "$doctorProfession"
-        hashMap["eventLocation"] = "$education"
-        hashMap["tvTime"] = "$previousRole"
-        hashMap["tvSelectDate"] = "$Department"
-        hashMap["tvTime"] = "$Hospital"
-        hashMap["tvSelectDate"] = "$time"
+        hashMap["doctorName"] = "$doctorName"
+        hashMap["doctorProfession"] = "$doctorProfession"
+        hashMap["education"] = "$education"
+        hashMap["previousRole"] = "$previousRole"
+        hashMap["Department"] = "$Department"
+        hashMap["Hospital"] = "$Hospital"
+        hashMap["time"] = "$time"
 
         val ref = FirebaseDatabase.getInstance().getReference("Doctors")
         ref.child("$timeStamp")

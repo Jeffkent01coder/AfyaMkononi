@@ -34,6 +34,12 @@ class Doctors : AppCompatActivity(), DoctorsAdapter.OnDoctorClickListener {
             startActivity(Intent(this, AddDoctor::class.java))
         }
 
+        binding.back.setOnClickListener {
+            onBackPressed()
+        }
+
+
+
         val layoutManager = LinearLayoutManager(this)
         recyclerView = binding.doctorsRecyler
         recyclerView.layoutManager = layoutManager
