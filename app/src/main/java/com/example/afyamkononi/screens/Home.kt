@@ -20,6 +20,11 @@ class Home : AppCompatActivity() {
 
         replaceFragment(HomeFragment())
 
+        // Check if the intent contains the extra to navigate directly to the ScheduleFragment
+        if (intent.getBooleanExtra("navigateToScheduleFragment", false)) {
+            replaceFragment(ScheduleFragment())
+        }
+
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.icHome -> replaceFragment(HomeFragment())
