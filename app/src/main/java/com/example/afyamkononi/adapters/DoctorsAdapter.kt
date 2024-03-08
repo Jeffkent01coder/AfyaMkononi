@@ -7,7 +7,7 @@ import com.example.afyamkononi.databinding.DoctorItemBinding
 import com.example.afyamkononi.model.DoctorData
 
 class DoctorsAdapter(
-    private val list: ArrayList<DoctorData>,
+    private val list: MutableList<DoctorData>,
     val clickListener: OnDoctorClickListener
 ) :
     RecyclerView.Adapter<DoctorsAdapter.DoctorViewHolder>() {
@@ -17,9 +17,7 @@ class DoctorsAdapter(
         fun setData(doctor: DoctorData, action: OnDoctorClickListener) {
             doctorItemBinding.apply {
                 doctorName.text = doctor.doctorName
-                doctor.image.let { doctorImage.setImageResource(it) }
                 doctorProfession.text = doctor.doctorProfession
-
             }
             doctorItemBinding.root.setOnClickListener {
                 action.onDoctorClick(doctor, adapterPosition)
