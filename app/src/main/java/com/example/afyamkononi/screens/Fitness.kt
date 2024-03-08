@@ -28,8 +28,9 @@ class Fitness : AppCompatActivity() {
             adapter = exerciseAdapter
         }
 
+        //37464653damsh941e7c9227e0bf9p1b0871jsnbe2ddf38abba
         val apiService = RetrofitClient.create()
-        apiService.getExercises(10, "37464653damsh941e7c9227e0bf9p1b0871jsnbe2ddf38abba")
+        apiService.getExercises(10, "")
             .enqueue(object : Callback<List<ExerciseModelItem>> {
                 override fun onResponse(
                     call: Call<List<ExerciseModelItem>>,
