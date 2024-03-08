@@ -9,9 +9,9 @@
         android:color="#8AA0BC"
         android:width="0.2dp"
         />
-    <solid
-        android:color="#EEF6FC"
-        />
+<!--    <solid-->
+<!--        android:color="@color/white"-->
+<!--        />-->
 
 
 </shape>
