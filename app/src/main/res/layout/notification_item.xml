@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
-            android:text="Sickness"
+            android:text="BMI Update"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textStyle="bold" />
 

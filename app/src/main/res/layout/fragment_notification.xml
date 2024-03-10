@@ -7,45 +7,34 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notifications"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textAlignment="center"
-            android:textStyle="bold"
             android:layout_marginTop="10dp"
-            />
+            android:text="Notifications"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textStyle="bold" />
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/search"
-                android:iconifiedByDefault="false"/>
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/search"
+            android:iconifiedByDefault="false" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/notificationsRecycler"
             android:layout_width="match_parent"
-            android:padding="15dp"
-            tools:listitem="@layout/symptom_item"
             android:layout_height="match_parent"
-            />
-
-
-
-
-
-
-
-
-
+            android:padding="15dp"
+            tools:listitem="@layout/notification_item" />
 
     </LinearLayout>
 

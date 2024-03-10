@@ -1,4 +1,3 @@
-// screens/Fitness.kt
 package com.example.afyamkononi.screens
 
 import android.os.Bundle

@@ -24,7 +24,7 @@ class Register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-//        FirebaseApp.initializeApp(this)
+
 
         binding.btnLogin.setOnClickListener {
             startActivity(Intent(this, Login::class.java))
