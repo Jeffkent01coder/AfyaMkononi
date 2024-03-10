@@ -37,7 +37,7 @@ class NotificationFragment : Fragment(), NotificationAdapter.OnNotificationClick
 
         dataInitialize()
         val layoutManager = LinearLayoutManager(context)
-        recyclerView = view.findViewById(R.id.eventsRecyclerView)
+        recyclerView = view.findViewById(R.id.notificationsRecycler)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         adapter = NotificationAdapter(notificationArrayList, this)

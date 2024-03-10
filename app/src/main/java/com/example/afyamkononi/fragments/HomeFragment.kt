@@ -62,8 +62,6 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
             startActivity(intent)
         }
 
-
-
         binding.fitness.setOnClickListener {
             val intent = Intent(requireActivity(), Fitness::class.java)
             startActivity(intent)

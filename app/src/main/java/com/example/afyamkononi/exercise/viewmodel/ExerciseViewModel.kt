@@ -5,22 +5,30 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.afyamkononi.exercise.exercise.model.ExerciseModelItem
+import com.example.afyamkononi.exercise.exercise.model.ExerciseResult
 import com.example.afyamkononi.exercise.repository.ExerciseDataRepository
-import kotlinx.coroutines.Dispatchers
+import com.example.afyamkononi.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
-class ExerciseViewModel @Inject constructor(private val repository: ExerciseDataRepository) :
+@HiltViewModel
+class ExerciseViewModel @Inject constructor( val repository: ExerciseDataRepository) :
     ViewModel() {
 
-    private val _exercises = MutableLiveData<List<ExerciseModelItem>?>()
-    val exercises: MutableLiveData<List<ExerciseModelItem>?>
-        get() = _exercises
+    private val _exercises: MutableLiveData<Resource<ExerciseResult>> = MutableLiveData()
+    val exercises: MutableLiveData<Resource<ExerciseResult>> get() = _exercises
 
-    fun fetchExercises(limit: Int, apiKey: String) {
-        viewModelScope.launch(Dispatchers.IO) {
-            val result = repository.getExercises(limit, apiKey)
-            _exercises.postValue(result)
+    init {
+        fetchExercises()
+        Timber.e("Debugging message here")
+    }
+
+    fun fetchExercises() {
+        viewModelScope.launch {
+            _exercises.value = repository.getExercises()
+            Timber.e("Fetching message here")
         }
     }
 }
