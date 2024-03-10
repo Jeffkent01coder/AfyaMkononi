@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.afyamkononi.databinding.ItemExerciseBinding
-import com.example.afyamkononi.models.ExerciseModelItem
+import com.example.afyamkononi.exercise.exercise.model.ExerciseModelItem
 
 class ExerciseAdapter(private var exercises: List<ExerciseModelItem>) :
     RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {

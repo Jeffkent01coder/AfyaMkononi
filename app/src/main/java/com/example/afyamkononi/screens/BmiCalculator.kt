@@ -92,8 +92,8 @@ class BmiCalculator : AppCompatActivity() {
         val hashMap: HashMap<String, Any> = HashMap()
         hashMap["id"] = "$timeStamp"
         hashMap["uid"] = "$uid"
-        hashMap["personMeet"] = "$tvResults"
-        hashMap["appointmentTitle"] = "$tvHealthy"
+        hashMap["tvResults"] = "$tvResults"
+        hashMap["tvComments"] = "$tvHealthy"
 
         val ref = FirebaseDatabase.getInstance().getReference("BMI_Data")
         ref.child("$timeStamp")

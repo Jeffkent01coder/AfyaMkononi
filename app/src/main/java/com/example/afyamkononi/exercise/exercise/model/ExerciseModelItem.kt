@@ -1,4 +1,4 @@
-package com.example.afyamkononi.models
+package com.example.afyamkononi.exercise.exercise.model
 
 
 import com.google.gson.annotations.SerializedName

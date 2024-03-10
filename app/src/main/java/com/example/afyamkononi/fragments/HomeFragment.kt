@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.afyamkononi.R
@@ -42,6 +44,7 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         getEvents()
 
         binding.bmi.setOnClickListener {
@@ -59,10 +62,7 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
             startActivity(intent)
         }
 
-        binding.todo.setOnClickListener {
-            val intent = Intent(requireActivity(), Todo::class.java)
-            startActivity(intent)
-        }
+
 
         binding.fitness.setOnClickListener {
             val intent = Intent(requireActivity(), Fitness::class.java)

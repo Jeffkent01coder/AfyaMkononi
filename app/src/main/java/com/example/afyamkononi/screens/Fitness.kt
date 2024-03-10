@@ -1,21 +1,26 @@
+// screens/Fitness.kt
 package com.example.afyamkononi.screens
 
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.afyamkononi.adapters.ExerciseAdapter
-import com.example.afyamkononi.apiservice.RetrofitClient
 import com.example.afyamkononi.databinding.ActivityFitnessBinding
-import com.example.afyamkononi.models.ExerciseModelItem
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.afyamkononi.exercise.viewmodel.ExerciseViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class Fitness : AppCompatActivity() {
-    private lateinit var binding : ActivityFitnessBinding
+    private lateinit var binding: ActivityFitnessBinding
     private lateinit var exerciseAdapter: ExerciseAdapter
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var exerciseViewModel: ExerciseViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,27 +33,22 @@ class Fitness : AppCompatActivity() {
             adapter = exerciseAdapter
         }
 
-        //37464653damsh941e7c9227e0bf9p1b0871jsnbe2ddf38abba
-        val apiService = RetrofitClient.create()
-        apiService.getExercises(10, "")
-            .enqueue(object : Callback<List<ExerciseModelItem>> {
-                override fun onResponse(
-                    call: Call<List<ExerciseModelItem>>,
-                    response: Response<List<ExerciseModelItem>>
-                ) {
-                    if (response.isSuccessful) {
-                        Log.i("Res", "Error is: "+ response.body().toString())
-                        val exercises = response.body()
-                        exercises?.let {
-                            exerciseAdapter.setData(it)
-                        }
-                    }
-                }
+        exerciseViewModel = ViewModelProvider(this, viewModelFactory).get(ExerciseViewModel::class.java)
 
-                override fun onFailure(call: Call<List<ExerciseModelItem>>, t: Throwable) {
-                    Log.d("Res", "Error is: "+ t.toString())
-                    Toast.makeText(this@Fitness, "Not working", Toast.LENGTH_LONG).show()
-                }
-            })
+        fetchData()
+    }
+
+    private fun fetchData() {
+        // Adjust this part to fetch exercises using the ViewModel 37464653damsh941e7c9227e0bf9p1b0871jsnbe2ddf38abba
+        exerciseViewModel.fetchExercises(10, "")
+        observeExercises()
+    }
+
+    private fun observeExercises() {
+        exerciseViewModel.exercises.observe(this) { exercises ->
+            exercises?.let {
+                exerciseAdapter.setData(it)
+            }
+        }
     }
 }
