@@ -8,9 +8,9 @@ import org.bson.Document
 
 
 class MongoDBManager {
-
-    val uri = "mongodb+srv://geoffreyerastus956:V0YNMcjo0BIqpiua@chatapp.e8188zu.mongodb.net/chatApp?" +
-            "retryWrites=true&w=majority&appName=chatApp\n"
+//mongodb+srv://geoffreyerastus956:V0YNMcjo0BIqpiua@chatapp.e8188zu.mongodb.net/chatApp?" +
+//            "retryWrites=true&w=majority&appName=chatApp\n
+    val uri = ""
 
     private val mongoClient = MongoClients.create(uri)
     private val database: MongoDatabase = mongoClient.getDatabase("chatApp")
