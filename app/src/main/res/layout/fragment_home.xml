@@ -244,6 +244,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/chat"
                 android:layout_width="80dp"
                 android:layout_height="130dp"
                 android:layout_margin="4dp"

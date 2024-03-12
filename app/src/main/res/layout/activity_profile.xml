@@ -71,6 +71,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/userPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -78,27 +79,16 @@
         android:text="9175353533"
         app:drawableStartCompat="@drawable/ic_baseline_local_phone_24" />
     <TextView
+        android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginStart="20dp"
         android:text="Meru"
         app:drawableStartCompat="@drawable/ic_baseline_location_on_24" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="20dp"
-        android:text="Male"
-        app:drawableStartCompat="@drawable/ic_baseline_safety_divider_24" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="20dp"
-        android:text="12/12/1999"
-        app:drawableStartCompat="@drawable/ic_baseline_calendar_month_24" />
-    <TextView
+        android:id="@+id/userEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -107,6 +97,7 @@
         app:drawableStartCompat="@drawable/ic_baseline_email_24" />
 
     <Button
+        android:id="@+id/logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/noteColor6"
