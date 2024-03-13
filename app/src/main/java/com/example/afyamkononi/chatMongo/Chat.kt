@@ -10,6 +10,7 @@ import com.example.afyamkononi.chatMongo.api.ApiService
 import com.example.afyamkononi.chatMongo.api.ConversationIdResponse
 import com.example.afyamkononi.chatMongo.client.RetrofitClient
 import com.example.afyamkononi.chatMongo.model.Message
+import com.example.afyamkononi.chatMongo.model.MessageSend
 import com.example.afyamkononi.databinding.ActivityChatBinding
 import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
@@ -55,7 +56,7 @@ class Chat : AppCompatActivity() {
             val messageText = binding.editTextMessage.text.toString().trim()
             if (messageText.isNotEmpty()) {
                 // Create a Message object with sender as current user ID and receiver ID obtained from intent
-                val message = Message(auth.currentUser!!.uid, id, messageText)
+                val message = MessageSend(auth.currentUser!!.uid, id, messageText)
                 // Send the message
                 sendMessage(message)
                 // Clear EditText after sending message
@@ -70,12 +71,12 @@ class Chat : AppCompatActivity() {
         val conversationId = sharedPreferences.getString("conversation_id", null)
         if (conversationId != null) {
             // If conversation ID exists, make API call to get messages
-            getMessagesForConversation(conversationId)
+            getMessagesForConversation(id, auth.currentUser!!.uid)
         }
     }
 
 
-    private fun sendMessage(message: Message) {
+    private fun sendMessage(message: MessageSend) {
         apiService.sendMessage(message).enqueue(object : Callback<ConversationIdResponse> {
             override fun onResponse(
                 call: Call<ConversationIdResponse>,
@@ -122,12 +123,9 @@ class Chat : AppCompatActivity() {
         Toast.makeText(this@Chat, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun getMessagesForConversation(conversationId: String) {
-        apiService.getMessagesForConversation(conversationId).enqueue(object : Callback<List<Message>> {
-            override fun onResponse(
-                call: Call<List<Message>>,
-                response: Response<List<Message>>
-            ) {
+    private fun getMessagesForConversation(sender: String?, receiver: String) {
+        apiService.getMessages(sender, receiver).enqueue(object : Callback<List<Message>> {
+            override fun onResponse(call: Call<List<Message>>, response: Response<List<Message>>) {
                 if (response.isSuccessful) {
                     val messages = response.body()
                     if (messages != null) {
@@ -147,7 +145,5 @@ class Chat : AppCompatActivity() {
             }
         })
     }
-
-
 
 }
