@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.afyamkononi.R
 import com.example.afyamkononi.adapters.EventsAdapter
 import com.example.afyamkononi.chatMongo.Chat
+import com.example.afyamkononi.chatMongo.ListDoctors
 import com.example.afyamkononi.databinding.FragmentHomeBinding
 import com.example.afyamkononi.model.EventData
 import com.example.afyamkononi.screens.*
@@ -61,7 +62,7 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
             startActivity(intent)
         }
         binding.chat.setOnClickListener {
-            val intent = Intent(requireActivity(), Chat::class.java)
+            val intent = Intent(requireActivity(), ListDoctors::class.java)
             startActivity(intent)
         }
 

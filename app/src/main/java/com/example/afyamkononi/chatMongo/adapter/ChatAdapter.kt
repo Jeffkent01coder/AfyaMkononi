@@ -1,34 +1,51 @@
 package com.example.afyamkononi.chatMongo.adapter
 
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.afyamkononi.chatMongo.model.ChatMessage
-import com.example.afyamkononi.databinding.ItemChatBinding
+import com.example.afyamkononi.chatMongo.model.Message
+import com.example.afyamkononi.databinding.MessageItemBinding
 
-class ChatAdapter(private val chatList: List<ChatMessage>) :
-    RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
+class MessageAdapter(private var messages: List<Message>) :
+    RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
 
-    inner class ViewHolder(private val binding: ItemChatBinding) :
+    inner class MessageViewHolder(private val binding: MessageItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(chatMessage: ChatMessage) {
-            binding.textSender.text = chatMessage.sender
-            binding.textMessage.text = chatMessage.message
+        fun bind(message: Message) {
+            binding.messageTextView.text = message.message
+
+            if (message.sender == "John") {
+                // If sender is "John", set gravity to end (right)
+                binding.senderTextView.gravity = Gravity.END
+                binding.receiverTextView.gravity = Gravity.END
+            } else {
+                // If sender is not "John", set gravity to start (left)
+                binding.senderTextView.gravity = Gravity.START
+                binding.receiverTextView.gravity = Gravity.START
+            }
+
+            // Set sender and receiver TextViews
+            binding.senderTextView.text = message.sender
+            binding.receiverTextView.text = message.receiver
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemChatBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
+        val binding = MessageItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MessageViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val chatMessage = chatList[position]
-        holder.bind(chatMessage)
+    override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
+        holder.bind(messages[position])
     }
 
-    override fun getItemCount(): Int {
-        return chatList.size
+    override fun getItemCount() = messages.size
+
+    fun updateData(newMessages: List<Message>) {
+        messages = newMessages
+        notifyDataSetChanged()
     }
 }
