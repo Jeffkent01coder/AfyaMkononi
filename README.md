@@ -2,24 +2,22 @@
 
 ## Overview
 
-Afya Mkononi is a mobile application designed to provide users with health-related information and services conveniently on their smartphones. The app utilizes Kotlin for the frontend development, XML for layout, Firebase for authentication and backend services, Retrofit for networking, ViewBinding for UI, and incorporates machine learning algorithms for enhanced user experience.
+Afya Mkononi is a mobile application aimed at providing users with convenient access to health-related information and services on their smartphones. The app, built using Kotlin for frontend development and XML for layout, incorporates a variety of features to enhance user experience. Firebase is utilized for authentication and backend services, while Retrofit handles networking tasks. Additionally, the app integrates machine learning algorithms to provide advanced functionalities such as symptom checking and personalized recommendations.
+
+**New Feature: Chat Component with MongoDB and Firebase Integration**
+
+We've introduced a new chat component to facilitate real-time communication between users and healthcare providers. This component utilizes MongoDB for storing chat data and integrates seamlessly with Firebase for authentication and backend support. Additionally, a Node.js backend has been implemented to manage the communication flow and ensure smooth operation of the chat feature.
 
 ## Features
 
-- **User Authentication**: Users can sign up and log in securely using Firebase authentication.
-
-- **Health Information**: Access to a wide range of health-related articles, tips, and information for users to stay informed about various health topics.
-
-- **Symptom Checker**: Users can input their symptoms, and the app utilizes machine learning algorithms to provide potential diagnoses or suggest necessary actions.
-
-- **Appointment Booking**: Users can book appointments with healthcare providers through the app.
-
+- **User Authentication**: Secure signup and login functionality using Firebase authentication.
+- **Health Information**: Access a vast array of health-related articles, tips, and information.
+- **Symptom Checker**: Input symptoms and receive potential diagnoses or necessary actions using machine learning algorithms.
+- **Appointment Booking**: Conveniently book appointments with healthcare providers within the app.
 - **Reminder System**: Set reminders for medication, appointments, or other health-related tasks.
-
-- **Community Forums**: Engage in discussions with other users, ask questions, and share experiences in a supportive community environment.
-
-- **Personal Health Records**: Store and manage personal health records securely within the app.
-- **Machine image recognition** : Scan images and provides results for the processed images
+- **Community Forums**: Engage in discussions, ask questions, and share experiences in a supportive community environment.
+- **Personal Health Records**: Safely store and manage personal health records.
+- **Machine Image Recognition**: Utilize image scanning for instant results on processed images.
 
 ## Technologies Used
 
@@ -29,6 +27,6 @@ Afya Mkononi is a mobile application designed to provide users with health-relat
 - **Retrofit**: HTTP client for making network requests to the backend server.
 - **ViewBinding**: Improved way of accessing views in layouts.
 - **Machine Learning**: Utilized for symptom checking and personalized recommendations.
-- **Python Backend**: Backend server development.
+- **MongoDB**: NoSQL database for storing chat data in the new chat component.
+- **Node.js Backend**: Backend server development for managing communication in the chat component.
 - **Machine Learning Models**: Developed and integrated for symptom checking and personalized recommendations.
-
