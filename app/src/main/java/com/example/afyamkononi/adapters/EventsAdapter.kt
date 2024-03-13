@@ -12,7 +12,7 @@ import com.example.afyamkononi.model.EventData
 import kotlin.random.Random
 
 class EventsAdapter(
-    private val list: ArrayList<EventData>,
+    private val list: MutableList<EventData>,
     val clickListener: OnEventClickListener
 ) :
     RecyclerView.Adapter<EventsAdapter.EventsViewHolder>() {
@@ -22,7 +22,6 @@ class EventsAdapter(
         fun setData(event: EventData, action: OnEventClickListener) {
             eventItemBinding.apply {
                 personMeet.text = event.eventName
-                event.image.let { anyImage.setImageResource(it) }
                 appointmentTitle.text = event.eventReason
                 eventLocation.text = event.eventLocation
                 eventTime.text = event.eventTime

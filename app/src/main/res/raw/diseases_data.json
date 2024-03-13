@@ -1,0 +1,543 @@
+{
+  "diseases": [
+    {
+      "name": "Common Cold",
+      "symptoms": [
+        "Runny or stuffy nose",
+        "Sore throat",
+        "Cough",
+        "Sneezing",
+        "Fatigue",
+        "Mild headache"
+      ]
+    },
+    {
+      "name": "Influenza (Flu)",
+      "symptoms": [
+        "Fever or feeling feverish/chills",
+        "Cough",
+        "Sore throat",
+        "Runny or stuffy nose",
+        "Muscle or body aches",
+        "Headaches",
+        "Fatigue"
+      ]
+    },
+    {
+      "name": "Asthma",
+      "symptoms": [
+        "Shortness of breath",
+        "Chest tightness or pain",
+        "Coughing",
+        "Wheezing"
+      ]
+    },
+    {
+      "name": "Diabetes",
+      "symptoms": [
+        "Increased thirst",
+        "Frequent urination",
+        "Extreme hunger",
+        "Unexplained weight loss",
+        "Fatigue",
+        "Irritability"
+      ]
+    },
+    {
+      "name": "Hypertension (High Blood Pressure)",
+      "symptoms": [
+        "Severe headache",
+        "Fatigue or confusion",
+        "Vision problems",
+        "Chest pain",
+        "Difficulty breathing",
+        "Irregular heartbeat"
+      ]
+    },
+    {
+      "name": "Pneumonia",
+      "symptoms": [
+        "Cough with phlegm or pus",
+        "Fever",
+        "Chills",
+        "Shortness of breath",
+        "Chest pain",
+        "Rapid breathing",
+        "Fatigue"
+      ]
+    },
+    {
+      "name": "Bronchitis",
+      "symptoms": [
+        "Cough",
+        "Fatigue",
+        "Shortness of breath",
+        "Slight fever and chills",
+        "Chest discomfort"
+      ]
+    },
+    {
+      "name": "Migraine",
+      "symptoms": [
+        "Intense headache",
+        "Nausea or vomiting",
+        "Sensitivity to light and sound",
+        "Aura"
+      ]
+    },
+    {
+      "name": "Osteoarthritis",
+      "symptoms": [
+        "Joint pain",
+        "Stiffness",
+        "Swelling",
+        "Decreased range of motion"
+      ]
+    },
+    {
+      "name": "Rheumatoid Arthritis",
+      "symptoms": [
+        "Joint pain",
+        "Swelling",
+        "Stiffness",
+        "Fatigue",
+        "Fever",
+        "Weight loss"
+      ]
+    },
+    {
+      "name": "Anxiety Disorders",
+      "symptoms": [
+        "Excessive worry",
+        "Feeling agitated",
+        "Restlessness",
+        "Fatigue",
+        "Difficulty concentrating",
+        "Irritability",
+        "Muscle tension"
+      ]
+    },
+    {
+      "name": "Depression",
+      "symptoms": [
+        "Persistent sadness",
+        "Loss of interest or pleasure",
+        "Feelings of guilt or worthlessness",
+        "Fatigue or decreased energy",
+        "Difficulty concentrating",
+        "Changes in sleep or appetite"
+      ]
+    },
+    {
+      "name": "Celiac Disease",
+      "symptoms": [
+        "Abdominal pain",
+        "Diarrhea",
+        "Bloating",
+        "Weight loss",
+        "Fatigue",
+        "Anemia"
+      ]
+    },
+    {
+      "name": "Eczema (Atopic Dermatitis)",
+      "symptoms": [
+        "Itchy skin",
+        "Dry skin",
+        "Red to brownish-gray patches",
+        "Small, raised bumps",
+        "Thickened, cracked or scaly skin"
+      ]
+    },
+    {
+      "name": "HIV/AIDS",
+      "symptoms": [
+        "Fever",
+        "Fatigue",
+        "Swollen lymph nodes",
+        "Rash",
+        "Sore throat",
+        "Weight loss"
+      ]
+    },
+    {
+      "name": "Hepatitis B",
+      "symptoms": [
+        "Abdominal pain",
+        "Dark urine",
+        "Fever",
+        "Joint pain",
+        "Loss of appetite",
+        "Nausea",
+        "Vomiting"
+      ]
+    },
+    {
+      "name": "Hepatitis C",
+      "symptoms": [
+        "Fatigue",
+        "Fever",
+        "Nausea or poor appetite",
+        "Abdominal pain",
+        "Jaundice",
+        "Joint pain"
+      ]
+    },
+    {
+      "name": "Malaria",
+      "symptoms": [
+        "Fever",
+        "Chills",
+        "Sweating",
+        "Headache",
+        "Nausea",
+        "Vomiting",
+        "Body aches"
+      ]
+    },
+    {
+      "name": "Tuberculosis (TB)",
+      "symptoms": [
+        "Cough that lasts three or more weeks",
+        "Coughing up blood",
+        "Chest pain",
+        "Unintended weight loss",
+        "Fatigue",
+        "Fever",
+        "Night sweats"
+      ]
+    },
+    {
+      "name": "Parkinson's Disease",
+      "symptoms": [
+        "Tremor",
+        "Slowed movement",
+        "Rigid muscles",
+        "Impaired posture and balance",
+        "Loss of automatic movements",
+        "Speech changes"
+      ]
+    },
+    {
+      "name": "Alzheimer's Disease",
+      "symptoms": [
+        "Memory loss",
+        "Difficulty in planning and solving problems",
+        "Confusion",
+        "Trouble understanding visual images",
+        "Difficulty speaking or writing"
+      ]
+    },
+    {
+      "name": "Multiple Sclerosis",
+      "symptoms": [
+        "Numbness or tingling",
+        "Weakness",
+        "Blurred or double vision",
+        "Fatigue",
+        "Problems with coordination and balance"
+      ]
+    },
+    {
+      "name": "Epilepsy",
+      "symptoms": [
+        "Seizures",
+        "Temporary confusion",
+        "Loss of consciousness or awareness",
+        "Psychic symptoms",
+        "Anxiety"
+      ]
+    },
+    {
+      "name": "Chronic Kidney Disease",
+      "symptoms": [
+        "Fatigue",
+        "Swelling of feet and ankles",
+        "Shortness of breath",
+        "Difficulty concentrating",
+        "Decreased appetite",
+        "Sleep problems",
+        "High blood pressure"
+      ]
+    },
+    {
+      "name": "Gastroesophageal Reflux Disease (GERD)",
+      "symptoms": [
+        "Heartburn",
+        "Regurgitation",
+        "Difficulty swallowing",
+        "Chest pain",
+        "Nausea"
+      ]
+    },
+    {
+      "name": "Crohn's Disease",
+      "symptoms": [
+        "Diarrhea",
+        "Abdominal pain",
+        "Fatigue",
+        "Weight loss",
+        "Fever",
+        "Bloody stool",
+        "Mouth sores"
+      ]
+    },
+    {
+      "name": "Ulcerative Colitis",
+      "symptoms": [
+        "Abdominal pain",
+        "Bloody diarrhea",
+        "Rectal pain or bleeding",
+        "Urgency to defecate",
+        "Weight loss",
+        "Fatigue"
+      ]
+    },
+    {
+      "name": "Fibromyalgia",
+      "symptoms": [
+        "Widespread muscle pain",
+        "Fatigue",
+        "Sleep disturbances",
+        "Joint stiffness",
+        "Headaches",
+        "Difficulty concentrating"
+      ]
+    },
+    {
+      "name": "Lupus",
+      "symptoms": [
+        "Fatigue",
+        "Joint pain, stiffness, and swelling",
+        "Butterfly-shaped rash on the face",
+        "Fever",
+        "Chest pain",
+        "Hair loss"
+      ]
+    },
+    {
+      "name": "Schizophrenia",
+      "symptoms": [
+        "Delusions",
+        "Hallucinations",
+        "Disorganized thinking",
+        "Agitation",
+        "Lack of motivation",
+        "Social withdrawal"
+      ]
+    },
+    {
+      "name": "Bipolar Disorder",
+      "symptoms": [
+        "Manic episodes",
+        "Depressive episodes",
+        "Mood swings",
+        "Changes in sleep patterns",
+        "Impulsivity",
+        "Difficulty concentrating"
+      ]
+    },
+    {
+      "name": "Endometriosis",
+      "symptoms": [
+        "Pelvic pain",
+        "Painful periods",
+        "Pain during intercourse",
+        "Excessive bleeding",
+        "Infertility"
+      ]
+    },
+    {
+      "name": "Chronic Obstructive Pulmonary Disease (COPD)",
+      "symptoms": [
+        "Shortness of breath",
+        "Chronic cough",
+        "Wheezing",
+        "Tightness in the chest",
+        "Frequent respiratory infections"
+      ]
+    },
+    {
+      "name": "Sleep Apnea",
+      "symptoms": [
+        "Loud snoring",
+        "Episodes of breathing cessation during sleep",
+        "Gasping for air during sleep",
+        "Morning headache",
+        "Difficulty staying asleep (insomnia)"
+      ]
+    },
+    {
+      "name": "Obesity",
+      "symptoms": [
+        "Increased body weight",
+        "Fatigue",
+        "Shortness of breath",
+        "Joint pain",
+        "Snoring",
+        "Low stamina"
+      ]
+    },
+    {
+      "name": "Anemia",
+      "symptoms": [
+        "Fatigue",
+        "Weakness",
+        "Pale or yellowish skin",
+        "Irregular heartbeat",
+        "Shortness of breath",
+        "Chest pain"
+      ]
+    },
+    {
+      "name": "Cystic Fibrosis",
+      "symptoms": [
+        "Persistent cough with thick mucus",
+        "Frequent lung infections",
+        "Wheezing",
+        "Shortness of breath",
+        "Poor growth or weight gain",
+        "Salty-tasting skin"
+      ]
+    },
+    {
+      "name": "Panic Disorder",
+      "symptoms": [
+        "Sudden and repeated attacks of fear",
+        "Trembling",
+        "Sweating",
+        "Shortness of breath",
+        "Chest pain",
+        "Nausea"
+      ]
+    },
+    {
+      "name": "Osteoporosis",
+      "symptoms": [
+        "Back pain",
+        "Loss of height over time",
+        "A stooped posture",
+        "Fractures that occur more easily than expected"
+      ]
+    },
+    {
+      "name": "Psoriasis",
+      "symptoms": [
+        "Red patches of skin",
+        "Thickened, pitted, or ridged nails",
+        "Silvery-white scales or plaques on the skin",
+        "Dry, cracked skin that may bleed"
+      ]
+    },
+    {
+      "name": "Hypothyroidism",
+      "symptoms": [
+        "Fatigue",
+        "Weight gain",
+        "Intolerance to cold",
+        "Joint and muscle pain",
+        "Constipation",
+        "Dry skin",
+        "Brittle hair and nails"
+      ]
+    },
+    {
+      "name": "Hyperthyroidism",
+      "symptoms": [
+        "Weight loss",
+        "Rapid heartbeat",
+        "Irregular heartbeat",
+        "Increased appetite",
+        "Nervousness or anxiety",
+        "Tremors",
+        "Sweating"
+      ]
+    },
+    {
+      "name": "Gout",
+      "symptoms": [
+        "Intense joint pain",
+        "Lingering discomfort",
+        "Inflammation and redness",
+        "Limited range of motion"
+      ]
+    },
+    {
+      "name": "Hemorrhoids",
+      "symptoms": [
+        "Rectal bleeding",
+        "Itching or irritation in the anal region",
+        "Pain or discomfort",
+        "Swelling around the anus"
+      ]
+    },
+    {
+      "name": "Chlamydia",
+      "symptoms": [
+        "Painful urination",
+        "Abnormal vaginal discharge",
+        "Pain during intercourse",
+        "Lower abdominal pain",
+        "Bleeding between periods"
+      ]
+    },
+    {
+      "name": "Gonorrhea",
+      "symptoms": [
+        "Painful urination",
+        "Abnormal discharge from the penis or vagina",
+        "Pain during intercourse",
+        "Abdominal or pelvic pain"
+      ]
+    },
+    {
+      "name": "Syphilis",
+      "symptoms": [
+        "Painless sores on genitals, rectum, or mouth",
+        "Rash on palms of hands and soles of feet",
+        "Fever",
+        "Fatigue",
+        "Sore throat",
+        "Swollen lymph nodes"
+      ]
+    },
+    {
+      "name": "Genital Herpes",
+      "symptoms": [
+        "Painful sores",
+        "Itching or burning in genital area",
+        "Pain during urination",
+        "Flu-like symptoms (fever, headache, fatigue)"
+      ]
+    },
+    {
+      "name": "Hypoglycemia",
+      "symptoms": [
+        "Shakiness",
+        "Sweating",
+        "Hunger",
+        "Irritability",
+        "Dizziness",
+        "Confusion",
+        "Weakness"
+      ]
+    },
+    {
+      "name": "Anorexia Nervosa",
+      "symptoms": [
+        "Significantly low body weight",
+        "Fear of gaining weight",
+        "Distorted body image",
+        "Restricting food intake"
+      ]
+    },
+    {
+      "name": "Bulimia Nervosa",
+      "symptoms": [
+        "Binge eating",
+        "Compensatory behaviors like vomiting, fasting, or excessive exercise",
+        "Feeling out of control during binge episodes"
+      ]
+    }
+  ]
+}

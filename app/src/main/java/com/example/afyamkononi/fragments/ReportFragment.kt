@@ -1,60 +1,94 @@
 package com.example.afyamkononi.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.afyamkononi.R
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.afyamkononi.adapters.EventsAdapter
+import com.example.afyamkononi.databinding.FragmentReportBinding
+import com.example.afyamkononi.model.EventData
+import com.google.firebase.Firebase
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.database
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ReportFragment : Fragment(), EventsAdapter.OnEventClickListener {
+    private lateinit var binding: FragmentReportBinding
+    private lateinit var adapter: EventsAdapter
+    private lateinit var recyclerView: RecyclerView
+    private var eventArrayList = mutableListOf<EventData>()
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ReportFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ReportFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_report, container, false)
+    ): View {
+        binding = FragmentReportBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ReportFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ReportFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        getEvents()
+
+        initializeRecyclerView()
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun initializeRecyclerView() {
+        recyclerView = binding.pastEventsRecyclerView
+        val layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+        adapter = EventsAdapter(eventArrayList, this)
+        recyclerView.adapter = adapter
+    }
+
+
+    override fun onEventClick(event: EventData, position: Int) {
+
+        Toast.makeText(requireActivity(), "Event clicked", Toast.LENGTH_LONG).show()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun getEvents() {
+        database = Firebase.database.reference
+        database.child("UpcomingEvents").get()
+            .addOnSuccessListener { dataSnapshot ->
+                for (jobSnapshot in dataSnapshot.children) {
+                    val id = jobSnapshot.child("id").getValue(String::class.java)
+                    val personMeet = jobSnapshot.child("personMeet").getValue(String::class.java)
+                    val appointmentTitle =
+                        jobSnapshot.child("appointmentTitle").getValue(String::class.java)
+                    val eventLocation =
+                        jobSnapshot.child("eventLocation").getValue(String::class.java)
+                    val tvTime = jobSnapshot.child("tvTime").getValue(String::class.java)
+                    val tvSelectDate =
+                        jobSnapshot.child("tvSelectDate").getValue(String::class.java)
+                    val uid = jobSnapshot.child("uid").getValue(String::class.java)
+
+                    if (id != null && personMeet != null && appointmentTitle != null && eventLocation != null && tvTime != null && tvSelectDate != null && uid != null) {
+                        val event = EventData(
+                            id,
+                            personMeet,
+                            appointmentTitle,
+                            eventLocation,
+                            tvTime,
+                            tvSelectDate
+                        )
+                        eventArrayList.add(event)
+                    }
                 }
+                adapter.notifyDataSetChanged()
+
             }
     }
+
+
 }

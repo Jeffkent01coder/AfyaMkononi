@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "431270670386",
+    "firebase_url": "https://afyamkononi-ba9bd-default-rtdb.firebaseio.com",
+    "project_id": "afyamkononi-ba9bd",
+    "storage_bucket": "afyamkononi-ba9bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431270670386:android:06efc9fce70a2abb650c2b",
+        "android_client_info": {
+          "package_name": "com.example.afyamkononi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAULzvGqAQe5vmZaDC3jdVJ6gOEV9mz_18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

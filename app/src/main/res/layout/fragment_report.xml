@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ReportFragment">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="4dp"
-            android:backgroundTint="#DCEDF9"
             app:cardCornerRadius="4dp"
             app:cardElevation="3dp"
             app:cardUseCompatPadding="true"
@@ -79,7 +78,6 @@
                 android:layout_width="180dp"
                 android:layout_height="100dp"
                 android:layout_margin="4dp"
-                android:backgroundTint="#DCEDF9"
                 app:cardCornerRadius="4dp"
                 app:cardElevation="3dp"
                 app:cardUseCompatPadding="true"
@@ -131,7 +129,6 @@
                 android:layout_width="180dp"
                 android:layout_height="100dp"
                 android:layout_margin="4dp"
-                android:backgroundTint="#FAF0DB"
                 app:cardCornerRadius="4dp"
                 app:cardElevation="3dp"
                 app:cardUseCompatPadding="true"
@@ -225,6 +222,45 @@
                 />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "Past Events : "
+                android:layout_marginStart="30dp"
+                />
+            <TextView
+                android:id="@+id/pastEvents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "20"
+                android:layout_marginStart="30dp"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "Past Events "
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_marginStart="30dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pastEventsRecyclerView"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            tools:listitem="@layout/event_item"
+            android:layout_height="match_parent"
+            />
 
 
     </LinearLayout>
