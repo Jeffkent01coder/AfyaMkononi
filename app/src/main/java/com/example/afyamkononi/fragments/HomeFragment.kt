@@ -3,6 +3,7 @@ package com.example.afyamkononi.fragments
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,14 +13,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.afyamkononi.R
 import com.example.afyamkononi.adapters.EventsAdapter
-import com.example.afyamkononi.chatMongo.Chat
 import com.example.afyamkononi.chatMongo.ListDoctors
 import com.example.afyamkononi.databinding.FragmentHomeBinding
 import com.example.afyamkononi.model.EventData
+import com.example.afyamkononi.model.UserData
 import com.example.afyamkononi.screens.*
 import com.google.firebase.Firebase
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.database
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+import timber.log.Timber
 import java.util.*
 
 class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
@@ -31,6 +33,7 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
 
 
     private lateinit var database: DatabaseReference
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreateView(
@@ -44,6 +47,10 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        auth = FirebaseAuth.getInstance()
+
+        // Fetch and display user name
+        fetchAndDisplayUserName()
 
         getEvents()
 
@@ -96,6 +103,43 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
 
     override fun onEventClick(event: EventData, position: Int) {
         Toast.makeText(requireActivity(), "Event clicked", Toast.LENGTH_LONG).show()
+    }
+
+    private fun fetchAndDisplayUserName() {
+        val currentUser = auth.currentUser
+        val userId = currentUser?.uid
+
+        if (userId != null) {
+            val userRef = FirebaseDatabase.getInstance().getReference("registeredUser").child(userId)
+            userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()) {
+                        val userData = snapshot.getValue(UserData::class.java)
+                        if (userData != null) {
+                            val userName = userData.name ?: "Unknown"
+                            Timber.tag("HomeFragment").d("User name retrieved: %s", userName)
+                            binding.userName.text = userName
+                        } else {
+                            Timber.tag("HomeFragment").e("User data is null")
+                        }
+                    } else {
+                        Timber.tag("HomeFragment").e("User data snapshot does not exist")
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle database error
+                    Timber.tag("HomeFragment").e("Failed to fetch user data: %s", error.message)
+                    Toast.makeText(
+                        requireContext(),
+                        "Failed to fetch user data",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            })
+        } else {
+            Timber.tag("HomeFragment").e("Current user ID is null")
+        }
     }
 
 
