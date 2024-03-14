@@ -41,10 +41,12 @@ class Register : AppCompatActivity() {
     private fun registerEvents() {
         binding.btnRegister.setOnClickListener {
             email = binding.userEmail.text.toString().trim()
+            user = binding.userName.text.toString().trim()
+            phone = binding.userPhone.text.toString().trim()
             val pass = binding.passEt.text.toString().trim()
             val verifyPass = binding.verifyPassEt.text.toString().trim()
 
-            if (email.isNotEmpty() && pass.isNotEmpty() && verifyPass.isNotEmpty()) {
+            if (email.isNotEmpty() && pass.isNotEmpty() && verifyPass.isNotEmpty() && user.isNotEmpty() && phone.isNotEmpty()) {
                 if (pass == verifyPass) {
                     binding.progressBar.visibility = View.VISIBLE
                     auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
@@ -107,9 +109,9 @@ class Register : AppCompatActivity() {
         val hashMap: HashMap<String, Any> = HashMap()
 
         hashMap["uid"] = "$uid"
-        hashMap["Name"] = user
-        hashMap["Email"] = email
-        hashMap["PhoneNumber"] = phone
+        hashMap["Name"] = "$user"
+        hashMap["Email"] = "$email"
+        hashMap["PhoneNumber"] = "$phone"
 
         val ref = FirebaseDatabase.getInstance().getReference("registeredUser")
         ref.child("$timeStamp")
@@ -118,7 +120,7 @@ class Register : AppCompatActivity() {
                 Timber.tag(TAG).d("Registered")
                 Toast.makeText(
                     this,
-                    "Registered Succesfully",
+                    "Registered Successfully",
                     Toast.LENGTH_SHORT
                 ).show()
 
