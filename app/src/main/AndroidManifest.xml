@@ -18,13 +18,7 @@
         android:theme="@style/Theme.AfyaMkononi"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".machineLearning.NewScan"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".machineLearning.ScanResult"
             android:exported="false">
