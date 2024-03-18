@@ -1,7 +1,7 @@
 package com.example.afyamkononi.model
 
 data class DoctorData(
-    val id: String? = "",
+    val id: String = "",
     val doctorName : String? = "",
     val doctorProfession : String? = "",
     val education : String? = "",

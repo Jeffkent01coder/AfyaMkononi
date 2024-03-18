@@ -53,7 +53,7 @@ class BmiCalculator : AppCompatActivity() {
         val bmi = weight.toDouble() / (doubleHeight * doubleHeight)
 
         binding.tvResults.text = String.format("Your BMI IS : %.2f", bmi)
-        binding.tvHealthy.text = String.format("You are considered : %s", healthyMessage(bmi))
+        binding.tvHealthy.text = String.format("You are : %s", healthyMessage(bmi))
 
     }
 
@@ -93,7 +93,7 @@ class BmiCalculator : AppCompatActivity() {
         hashMap["id"] = "$timeStamp"
         hashMap["uid"] = "$uid"
         hashMap["tvResults"] = "$tvResults"
-        hashMap["tvComments"] = "$tvHealthy"
+        hashMap["tvHealthy"] = "$tvHealthy"
 
         val ref = FirebaseDatabase.getInstance().getReference("BMI_Data")
         ref.child("$timeStamp")

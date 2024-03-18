@@ -51,9 +51,7 @@ class Register : AppCompatActivity() {
                     binding.progressBar.visibility = View.VISIBLE
                     auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
-
                             createUserDetails(timeStamp)
-
                             binding.userName.text?.clear()
                             binding.userPhone.text?.clear()
                             binding.passEt.text?.clear()
@@ -64,23 +62,15 @@ class Register : AppCompatActivity() {
                                 "Registration successful",
                                 Toast.LENGTH_SHORT
                             ).show()
+                            startActivity(Intent(this, Home::class.java))
+                            finish()
 
 
                         } else {
                             Toast.makeText(this, it.exception!!.message, Toast.LENGTH_SHORT)
                                 .show()
                         }
-                        if (email.isNotEmpty() && pass.isNotEmpty()) {
-                            startActivity(Intent(this, Home::class.java))
-                            finish()
-                        } else {
-                            Toast.makeText(
-                                this,
-                                "Please fill in all fields",
-                                Toast.LENGTH_SHORT
-                            )
-                                .show()
-                        }
+                        
                         binding.progressBar.visibility = View.GONE
                     }
                 } else {
@@ -109,12 +99,12 @@ class Register : AppCompatActivity() {
         val hashMap: HashMap<String, Any> = HashMap()
 
         hashMap["uid"] = "$uid"
-        hashMap["Name"] = "$user"
-        hashMap["Email"] = "$email"
-        hashMap["PhoneNumber"] = "$phone"
+        hashMap["name"] = "$user"
+        hashMap["email"] = "$email"
+        hashMap["phone"] = "$phone"
 
         val ref = FirebaseDatabase.getInstance().getReference("registeredUser")
-        ref.child("$timeStamp")
+        ref.child("$uid")
             .setValue(hashMap)
             .addOnSuccessListener {
                 Timber.tag(TAG).d("Registered")
