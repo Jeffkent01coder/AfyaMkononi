@@ -27,6 +27,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/ivUser"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_gravity="center"
@@ -42,6 +43,25 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         />
 
+
+    <Button
+        android:id="@+id/ivCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:text="New Scan"
+        android:backgroundTint="#1c6ba4"
+        />
+
+    <Button
+        android:id="@+id/btnSendProcess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:text="Send for Processing"
+        android:backgroundTint="#1c6ba4"
+        />
+
     <Button
         android:id="@+id/btnSaveData"
         android:layout_marginVertical="20dp"
@@ -52,14 +72,6 @@
         android:backgroundTint="#1c6ba4"
         />
 
-    <Button
-        android:id="@+id/btnNewScan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="80dp"
-        android:text="New Scan"
-        android:backgroundTint="#1c6ba4"
-        />
 
 
 </LinearLayout>

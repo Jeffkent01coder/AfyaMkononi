@@ -217,6 +217,7 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/machineLearning"
                 android:layout_width="80dp"
                 android:layout_height="130dp"
                 android:layout_margin="4dp"
