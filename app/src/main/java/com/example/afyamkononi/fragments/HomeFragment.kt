@@ -3,7 +3,6 @@ package com.example.afyamkononi.fragments
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -115,11 +114,14 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
         val userId = currentUser?.uid
 
         if (userId != null) {
-            val userRef = FirebaseDatabase.getInstance().getReference("registeredUser").child(userId)
+            val userRef =
+                FirebaseDatabase.getInstance().getReference("registeredUser").child(userId)
             userRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
+                        Timber.e("exists")
                         val userData = snapshot.getValue(UserData::class.java)
+                        Timber.e(userData.toString())
                         if (userData != null) {
                             val userName = userData.name ?: "Unknown"
                             Timber.tag("HomeFragment").d("User name retrieved: %s", userName)
@@ -168,13 +170,15 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
                     if (id != null && personMeet != null && appointmentTitle != null && eventLocation != null && tvTime != null && tvSelectDate != null && uid != null) {
                         val event = EventData(
                             id,
+                            uid,
                             personMeet,
                             appointmentTitle,
                             eventLocation,
                             tvTime,
                             tvSelectDate
                         )
-                        eventArrayList.add(event)
+                        if (event.uid == auth.currentUser?.uid)
+                            eventArrayList.add(event)
                     }
                 }
                 adapter.notifyDataSetChanged()

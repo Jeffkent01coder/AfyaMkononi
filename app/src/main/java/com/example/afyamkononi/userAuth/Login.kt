@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.afyamkononi.databinding.ActivityLoginBinding
 import com.example.afyamkononi.screens.Home
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
@@ -45,16 +44,10 @@ class Login : AppCompatActivity() {
                             "Logged In successfully",
                             Toast.LENGTH_SHORT
                         ).show()
-
-                    } else {
-                        Toast.makeText(this, it.exception!!.message, Toast.LENGTH_SHORT)
-                            .show()
-                    }
-                    if (email.isNotEmpty() && password.isNotEmpty()) {
                         startActivity(Intent(this, Home::class.java))
                         finish()
                     } else {
-                        Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT)
+                        Toast.makeText(this, it.exception!!.message, Toast.LENGTH_SHORT)
                             .show()
                     }
 
