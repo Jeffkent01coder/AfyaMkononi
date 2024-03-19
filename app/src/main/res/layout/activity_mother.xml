@@ -6,4 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".doctors.Mother">
 
+    <FrameLayout
+        android:id="@+id/doctorFrameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/docBottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/docBottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:itemIconTint="@drawable/navigation_view_colored"
+        app:menu="@menu/doctor_menu"
+        app:itemTextColor="@drawable/navigation_view_colored"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/doctorFrameLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
