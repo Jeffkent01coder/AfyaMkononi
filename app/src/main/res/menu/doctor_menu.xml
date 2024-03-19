@@ -6,12 +6,11 @@
         android:title="Schedules" />
     <item
         android:id="@+id/icChat"
-        android:icon="@drawable/calendar"
+        android:icon="@drawable/ic_baseline_chat_24"
         android:title="Chat"
-
         />
     <item
-        android:id="@+id/icReport"
+        android:id="@+id/icRegister"
         android:icon="@drawable/report"
         android:title="Register"
         />
