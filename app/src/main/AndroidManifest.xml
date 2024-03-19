@@ -40,28 +40,28 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".machineLearning.ScanResult"
+            android:name=".patients.machineLearning.ScanResult"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".machineLearning.PreviousScans"
+            android:name=".patients.machineLearning.PreviousScans"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".chatMongo.ListDoctors"
+            android:name=".shared.chatMongo.ListDoctors"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".chatMongo.Chat"
+            android:name=".shared.chatMongo.Chat"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -80,91 +80,91 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".screens.DoctorInfo"
+            android:name=".patients.screens.DoctorInfo"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".screens.Fitness"
+            android:name=".patients.screens.Fitness"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".screens.HospitalsGPS"
+            android:name=".patients.screens.HospitalsGPS"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".screens.EditProfile"
+            android:name=".patients.screens.EditProfile"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".screens.Profile"
+            android:name=".patients.screens.Profile"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".screens.Doctors"
+            android:name=".patients.screens.Doctors"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".screens.NewsDetails"
+            android:name=".patients.screens.NewsDetails"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".screens.News"
+            android:name=".patients.screens.News"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".screens.BmiCalculator"
+            android:name=".patients.screens.BmiCalculator"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".screens.Home"
+            android:name=".patients.screens.Home"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".userAuth.Register"
+            android:name=".patients.userAuth.Register"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".userAuth.Login"
+            android:name=".patients.userAuth.Login"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Choice"
+            android:name=".shared.Choice"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

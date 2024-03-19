@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Choice">
+    tools:context=".shared.Choice">
 
     <ImageView
         android:layout_width="match_parent"
