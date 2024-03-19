@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Choice">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/splash"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AFYA MKONONI"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Who Are You"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/btnDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Doctor"
+        android:layout_marginVertical="50dp"
+        android:backgroundTint="#1c6ba4"
+        android:layout_marginHorizontal="100dp"
+        />
+
+    <Button
+        android:id="@+id/btnPatient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Patient"
+        android:backgroundTint="#1c6ba4"
+        android:layout_marginHorizontal="100dp"
+        />
+
+
+</LinearLayout>

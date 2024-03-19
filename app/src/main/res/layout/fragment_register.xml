@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".doctors.fragments.RegisterFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back_24" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get Added As A Doctor"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        </LinearLayout>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <!-- everything you already have -->
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Doctor Name"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="10dp"
+                    app:boxStrokeColor="#1c6ba4"
+                    app:hintTextColor="#1c6ba4">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/doctorName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Name" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Doctor Profession"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="10dp"
+                    app:boxStrokeColor="#1c6ba4"
+                    app:hintTextColor="#1c6ba4">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/doctorProfession"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Profession" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Doctor Education"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="10dp"
+                    app:boxStrokeColor="#1c6ba4"
+                    app:hintTextColor="#1c6ba4">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/education"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Education" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Doctor Previous Role"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="10dp"
+                    app:boxStrokeColor="#1c6ba4"
+                    app:hintTextColor="#1c6ba4">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/previousRole"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Previous Role" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Doctor Department"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="10dp"
+                    app:boxStrokeColor="#1c6ba4"
+                    app:hintTextColor="#1c6ba4">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Department"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Department" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Doctor Hospital"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="10dp"
+                    app:boxStrokeColor="#1c6ba4"
+                    app:hintTextColor="#1c6ba4">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Hospital"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Hospital" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Doctor Availability"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="10dp"
+                    app:boxStrokeColor="#1c6ba4"
+                    app:hintTextColor="#1c6ba4">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter time" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="60dp"
+                    android:backgroundTint="#0E5DD3"
+                    android:text="ADD" />
+
+            </TableLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>

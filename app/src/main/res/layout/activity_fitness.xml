@@ -8,6 +8,16 @@
     android:layout_height="match_parent"
     tools:context=".screens.Fitness">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keep Fit By Doing The Following Exercise"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textStyle="bold"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

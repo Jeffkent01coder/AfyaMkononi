@@ -1,30 +1,40 @@
-package com.example.afyamkononi.screens
+package com.example.afyamkononi.doctors.fragments
 
 import android.app.ProgressDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import com.example.afyamkononi.R
-import com.example.afyamkononi.databinding.ActivityAddDoctorBinding
+import androidx.fragment.app.Fragment
+import com.example.afyamkononi.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import java.util.HashMap
 
-class AddDoctor : AppCompatActivity() {
-    private lateinit var binding : ActivityAddDoctorBinding
 
+class RegisterFragment : Fragment() {
+    private lateinit var binding: FragmentRegisterBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var progressDialog: ProgressDialog
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityAddDoctorBinding.inflate(layoutInflater)
-        supportActionBar?.hide()
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+
+        binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        progressDialog = ProgressDialog(this)
+        progressDialog = ProgressDialog(context)
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
@@ -34,7 +44,6 @@ class AddDoctor : AppCompatActivity() {
 
 
     }
-
     private var doctorName = ""
     private var doctorProfession = ""
     private var education = ""
@@ -52,21 +61,21 @@ class AddDoctor : AppCompatActivity() {
         time = binding.time.text.toString().trim()
 
         if (doctorName.isEmpty()) {
-            Toast.makeText(this, "Enter Doctor Name ", Toast.LENGTH_SHORT)
+            Toast.makeText(requireActivity(), "Enter Doctor Name ", Toast.LENGTH_SHORT)
                 .show()
         } else if (doctorProfession.isEmpty()) {
-            Toast.makeText(this, "Enter Doctor Profession", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), "Enter Doctor Profession", Toast.LENGTH_SHORT).show()
         } else if (education.isEmpty()) {
-            Toast.makeText(this, "Enter Doctor Education ", Toast.LENGTH_SHORT)
+            Toast.makeText(requireActivity(), "Enter Doctor Education ", Toast.LENGTH_SHORT)
                 .show()
         } else if (previousRole.isEmpty()) {
-            Toast.makeText(this, "Enter Doctor Previous Role", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), "Enter Doctor Previous Role", Toast.LENGTH_SHORT).show()
         } else if (Department.isEmpty()) {
-            Toast.makeText(this, "Enter Doctor Department", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), "Enter Doctor Department", Toast.LENGTH_SHORT).show()
         } else if (Hospital.isEmpty()){
-            Toast.makeText(this, "Enter Doctor Hospital", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), "Enter Doctor Hospital", Toast.LENGTH_SHORT).show()
         }else if (time.isEmpty()){
-            Toast.makeText(this, "Enter Doctor Availability", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), "Enter Doctor Availability", Toast.LENGTH_SHORT).show()
         }else {
             uploadDoctorInfoToDb()
             binding.doctorName.text?.clear()
@@ -83,7 +92,7 @@ class AddDoctor : AppCompatActivity() {
     private fun uploadDoctorInfoToDb() {
         val timeStamp = System.currentTimeMillis()
 
-        val progressDialog = ProgressDialog(this)
+        val progressDialog = ProgressDialog(context)
         progressDialog.setMessage("Uploading data")
         val uid = FirebaseAuth.getInstance().uid
         val hashMap: HashMap<String, Any> = HashMap()
@@ -103,7 +112,7 @@ class AddDoctor : AppCompatActivity() {
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 Toast.makeText(
-                    this,
+                    requireActivity(),
                     "Uploaded",
                     Toast.LENGTH_SHORT
                 ).show()
@@ -112,11 +121,13 @@ class AddDoctor : AppCompatActivity() {
             .addOnFailureListener { e ->
                 progressDialog.dismiss()
                 Toast.makeText(
-                    this,
+                    requireActivity(),
                     "Uploading Event Failed due to ${e.message}",
                     Toast.LENGTH_SHORT
                 ).show()
 
             }
     }
+
+
 }

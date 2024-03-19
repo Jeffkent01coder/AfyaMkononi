@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/icSchedule"
+        android:icon="@drawable/home"
+        android:title="Schedules" />
+    <item
+        android:id="@+id/icChat"
+        android:icon="@drawable/ic_baseline_chat_24"
+        android:title="Chat"
+        />
+    <item
+        android:id="@+id/icRegister"
+        android:icon="@drawable/report"
+        android:title="Register"
+        />
+
+</menu>

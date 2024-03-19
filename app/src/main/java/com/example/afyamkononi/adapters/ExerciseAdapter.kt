@@ -5,13 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.afyamkononi.databinding.ItemExerciseBinding
-import com.example.afyamkononi.exercise.exercise.model.ExerciseModelItem
+import com.example.afyamkononi.exercise.model.Exercise
 
-class ExerciseAdapter(private var exercises: List<ExerciseModelItem>) :
+class ExerciseAdapter(private var exercises: List<Exercise>) :
     RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
-        val binding = ItemExerciseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemExerciseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ExerciseViewHolder(binding)
     }
 
@@ -22,14 +23,15 @@ class ExerciseAdapter(private var exercises: List<ExerciseModelItem>) :
 
     override fun getItemCount(): Int = exercises.size
 
-    fun setData(data: List<ExerciseModelItem>) {
-        exercises = data
-        notifyDataSetChanged()
-    }
+//    fun setData(data: List<Exercise>) {
+//        exercises = data
+//        notifyDataSetChanged()
+//    }
 
 
-    class ExerciseViewHolder(private val binding: ItemExerciseBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(exercise: ExerciseModelItem) {
+    class ExerciseViewHolder(private val binding: ItemExerciseBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(exercise: Exercise) {
             binding.apply {
                 exerciseName.text = exercise.name
                 bodyPart.text = exercise.bodyPart
