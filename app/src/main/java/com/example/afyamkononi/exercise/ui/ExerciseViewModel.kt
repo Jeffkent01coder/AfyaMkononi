@@ -1,5 +1,6 @@
 package com.example.afyamkononi.exercise.ui
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,24 +11,17 @@ import kotlinx.coroutines.launch
 
 class ExerciseViewModel : ViewModel() {
     private val repository: Repository = Repository()
-    val exercises: MutableLiveData<List<Exercise>> = MutableLiveData()
+    private val _exercises: MutableLiveData<Resource<List<Exercise>>> =
+        MutableLiveData<Resource<List<Exercise>>>().apply {
+            value = Resource.Loading() // Set initial value as loading
+        }
+    val exercises: LiveData<Resource<List<Exercise>>> = _exercises
+
 
     init {
         viewModelScope.launch {
-            when (val apiResponse = repository.getExercises()) {
-                is Resource.Loading -> {
-
-                }
-
-                is Error -> {
-
-                }
-
-                is Resource.Success -> {
-                    exercises.value = apiResponse.data ?: emptyList()
-                }
-                else -> {}
-            }
+            val apiResponse = repository.getExercises()
+            _exercises.value = apiResponse
         }
     }
 }
