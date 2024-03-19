@@ -1,9 +1,8 @@
-package com.example.afyamkononi.exercise.exercise.model
-
+package com.example.afyamkononi.exercise.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ExerciseModelItem(
+data class Exercise(
     @SerializedName("bodyPart")
     val bodyPart: String?,
     @SerializedName("equipment")
