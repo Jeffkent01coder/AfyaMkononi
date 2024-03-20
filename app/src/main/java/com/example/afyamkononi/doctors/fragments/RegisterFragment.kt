@@ -1,60 +1,133 @@
 package com.example.afyamkononi.doctors.fragments
 
+import android.app.ProgressDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.afyamkononi.R
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.example.afyamkononi.databinding.FragmentRegisterBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import java.util.HashMap
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [RegisterFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RegisterFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentRegisterBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var progressDialog: ProgressDialog
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+    ): View {
+
+        binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        return binding.root
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RegisterFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RegisterFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        progressDialog = ProgressDialog(context)
+        progressDialog.setTitle("Please Wait")
+        progressDialog.setCanceledOnTouchOutside(false)
+
+        binding.btnAdd.setOnClickListener {
+            validateData()
+        }
+
+
+    }
+    private var doctorName = ""
+    private var doctorProfession = ""
+    private var education = ""
+    private var previousRole = ""
+    private var Department = ""
+    private var Hospital = ""
+    private var time = ""
+    private fun validateData() {
+        doctorName = binding.doctorName.text.toString().trim()
+        doctorProfession = binding.doctorProfession.text.toString().trim()
+        education = binding.education.text.toString().trim()
+        previousRole = binding.previousRole.text.toString().trim()
+        Department = binding.Department.text.toString().trim()
+        Hospital = binding.Hospital.text.toString().trim()
+        time = binding.time.text.toString().trim()
+
+        if (doctorName.isEmpty()) {
+            Toast.makeText(requireActivity(), "Enter Doctor Name ", Toast.LENGTH_SHORT)
+                .show()
+        } else if (doctorProfession.isEmpty()) {
+            Toast.makeText(requireActivity(), "Enter Doctor Profession", Toast.LENGTH_SHORT).show()
+        } else if (education.isEmpty()) {
+            Toast.makeText(requireActivity(), "Enter Doctor Education ", Toast.LENGTH_SHORT)
+                .show()
+        } else if (previousRole.isEmpty()) {
+            Toast.makeText(requireActivity(), "Enter Doctor Previous Role", Toast.LENGTH_SHORT).show()
+        } else if (Department.isEmpty()) {
+            Toast.makeText(requireActivity(), "Enter Doctor Department", Toast.LENGTH_SHORT).show()
+        } else if (Hospital.isEmpty()){
+            Toast.makeText(requireActivity(), "Enter Doctor Hospital", Toast.LENGTH_SHORT).show()
+        }else if (time.isEmpty()){
+            Toast.makeText(requireActivity(), "Enter Doctor Availability", Toast.LENGTH_SHORT).show()
+        }else {
+            uploadDoctorInfoToDb()
+            binding.doctorName.text?.clear()
+            binding.doctorProfession.text?.clear()
+            binding.education.text?.clear()
+            binding.previousRole.text?.clear()
+            binding.Department.text?.clear()
+            binding.Hospital.text?.clear()
+            binding.time.text?.clear()
+        }
+
+    }
+
+    private fun uploadDoctorInfoToDb() {
+        val timeStamp = System.currentTimeMillis()
+
+        val progressDialog = ProgressDialog(context)
+        progressDialog.setMessage("Uploading data")
+        val uid = FirebaseAuth.getInstance().uid
+        val hashMap: HashMap<String, Any> = HashMap()
+        hashMap["id"] = "$timeStamp"
+        hashMap["uid"] = "$uid"
+        hashMap["doctorName"] = "$doctorName"
+        hashMap["doctorProfession"] = "$doctorProfession"
+        hashMap["education"] = "$education"
+        hashMap["previousRole"] = "$previousRole"
+        hashMap["Department"] = "$Department"
+        hashMap["Hospital"] = "$Hospital"
+        hashMap["time"] = "$time"
+
+        val ref = FirebaseDatabase.getInstance().getReference("Doctors")
+        ref.child("$timeStamp")
+            .setValue(hashMap)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                Toast.makeText(
+                    requireActivity(),
+                    "Uploaded",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            }
+            .addOnFailureListener { e ->
+                progressDialog.dismiss()
+                Toast.makeText(
+                    requireActivity(),
+                    "Uploading Event Failed due to ${e.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+
             }
     }
+
+
 }

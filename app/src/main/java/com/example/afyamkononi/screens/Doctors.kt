@@ -30,9 +30,7 @@ class Doctors : AppCompatActivity(), DoctorsAdapter.OnDoctorClickListener {
 
         getDoctors()
 
-        binding.addDoctor.setOnClickListener {
-            startActivity(Intent(this, AddDoctor::class.java))
-        }
+
 
         binding.back.setOnClickListener {
             onBackPressed()

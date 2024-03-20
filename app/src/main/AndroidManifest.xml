@@ -19,6 +19,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".doctors.doctorAuth.DoctorLogin"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".doctors.Mother"
             android:exported="false">
             <meta-data
@@ -26,7 +33,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".doctors.DoctorRegister"
+            android:name=".doctors.doctorAuth.DoctorRegister"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -151,6 +158,13 @@
         </activity>
         <activity
             android:name=".userAuth.Login"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Choice"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
