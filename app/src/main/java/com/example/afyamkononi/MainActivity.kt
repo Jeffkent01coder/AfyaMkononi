@@ -6,8 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.afyamkononi.databinding.ActivityMainBinding
-import com.example.afyamkononi.screens.Home
-import com.example.afyamkononi.userAuth.Login
+import com.example.afyamkononi.shared.Choice
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
