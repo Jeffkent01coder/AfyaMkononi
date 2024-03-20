@@ -21,11 +21,11 @@ class EventsAdapter(
         RecyclerView.ViewHolder(eventItemBinding.root) {
         fun setData(event: EventData, action: OnEventClickListener) {
             eventItemBinding.apply {
-                personMeet.text = event.eventName
-                appointmentTitle.text = event.eventReason
+                personMeet.text = event.personMeet
+                appointmentTitle.text = event.appointmentTitle
                 eventLocation.text = event.eventLocation
-                eventTime.text = event.eventTime
-                eventDate.text = event.eventDate
+                eventTime.text = event.tvTime
+                eventDate.text = event.tvSelectDate
 
             }
             eventItemBinding.root.setOnClickListener {

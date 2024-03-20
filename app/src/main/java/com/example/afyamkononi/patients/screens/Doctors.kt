@@ -58,6 +58,7 @@ class Doctors : AppCompatActivity(), DoctorsAdapter.OnDoctorClickListener {
         intent.putExtra("Department", doctor.Department)
         intent.putExtra("Hospital", doctor.Hospital)
         intent.putExtra("time", doctor.time)
+        intent.putExtra("doctorId", doctor.id)
         startActivity(intent)
     }
 
