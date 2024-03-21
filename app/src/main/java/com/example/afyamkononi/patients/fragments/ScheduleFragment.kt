@@ -30,6 +30,7 @@ class ScheduleFragment : Fragment() {
 
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var progressDialog: ProgressDialog
+    private var doctorId = ""
 
     @RequiresApi(Build.VERSION_CODES.N)
     private val calendar = Calendar.getInstance()
@@ -49,6 +50,12 @@ class ScheduleFragment : Fragment() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        doctorId = requireActivity().intent.getStringExtra("id").toString()
+        println("Doctor id is: $doctorId")
+
+
+
+
         progressDialog = ProgressDialog(requireActivity())
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
@@ -63,6 +70,7 @@ class ScheduleFragment : Fragment() {
         binding.btnSaveEvent.setOnClickListener {
             validateData()
         }
+
 
 
         val btnPickTime = binding.btnPickTime
@@ -154,6 +162,7 @@ class ScheduleFragment : Fragment() {
         hashMap["eventLocation"] = "$eventLocation"
         hashMap["tvTime"] = "$tvTime"
         hashMap["tvSelectDate"] = "$tvSelectDate"
+        hashMap["doctorId"] = "$doctorId"
 
         val ref = FirebaseDatabase.getInstance().getReference("UpcomingEvents")
         ref.child("$timeStamp")

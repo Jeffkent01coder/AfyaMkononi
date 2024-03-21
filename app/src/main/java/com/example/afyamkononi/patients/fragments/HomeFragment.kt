@@ -18,7 +18,6 @@ import com.example.afyamkononi.patients.machineLearning.PreviousScans
 import com.example.afyamkononi.patients.screens.*
 import com.example.afyamkononi.shared.model.EventData
 import com.example.afyamkononi.shared.model.UserData
-import com.example.afyamkononi.screens.*
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -166,9 +165,11 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
                     val tvTime = jobSnapshot.child("tvTime").getValue(String::class.java)
                     val tvSelectDate =
                         jobSnapshot.child("tvSelectDate").getValue(String::class.java)
+
+                    val doctorId = jobSnapshot.child("doctorId").getValue(String::class.java)
                     val uid = jobSnapshot.child("uid").getValue(String::class.java)
 
-                    if (id != null && personMeet != null && appointmentTitle != null && eventLocation != null && tvTime != null && tvSelectDate != null && uid != null) {
+                    if (id != null && personMeet != null && appointmentTitle != null && eventLocation != null && tvTime != null && tvSelectDate != null && uid != null && doctorId != null) {
                         val event = EventData(
                             id,
                             uid,
@@ -176,7 +177,8 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
                             appointmentTitle,
                             eventLocation,
                             tvTime,
-                            tvSelectDate
+                            tvSelectDate,
+                            doctorId
                         )
                         if (event.uid == auth.currentUser?.uid)
                             eventArrayList.add(event)
