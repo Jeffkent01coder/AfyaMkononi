@@ -35,12 +35,18 @@ class Chat : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
+        apiService = RetrofitClient.createService(ApiService::class.java)
+
         binding.apply {
             intent
             doctorName.text = intent.getStringExtra("doctorName")
             doctorProfession.text = intent.getStringExtra("doctorProfession")
-            id = intent.getStringExtra("id")
         }
+
+        id = intent.getStringExtra("id")
+
+        getMessagesForConversation(id, auth.currentUser!!.uid)
+
 
         // Initialize RecyclerView and adapter
         adapter = MessageAdapter(emptyList())
@@ -66,13 +72,7 @@ class Chat : AppCompatActivity() {
             }
         }
 
-        // Check if there is a conversation ID saved in preferences
-        val sharedPreferences = getSharedPreferences("conversation_data", Context.MODE_PRIVATE)
-        val conversationId = sharedPreferences.getString("conversation_id", null)
-        if (conversationId != null) {
-            // If conversation ID exists, make API call to get messages
-            getMessagesForConversation(id, auth.currentUser!!.uid)
-        }
+
     }
 
 
@@ -84,8 +84,6 @@ class Chat : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val conversationId = response.body()?.conversationId
-                    // Save conversation ID to SharedPreferences
-                    saveConversationIdToLocalStorage(conversationId)
                     Toast.makeText(
                         this@Chat,
                         "Message sent successfully, Conversation ID: $conversationId",
@@ -110,13 +108,6 @@ class Chat : AppCompatActivity() {
                 ).show()
             }
         })
-    }
-
-    private fun saveConversationIdToLocalStorage(conversationId: String?) {
-        val sharedPreferences = getSharedPreferences("conversation_data", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString("conversation_id", conversationId)
-        editor.apply()
     }
 
     private fun showToast(message: String) {

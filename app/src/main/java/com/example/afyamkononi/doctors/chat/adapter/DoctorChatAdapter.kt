@@ -4,18 +4,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.afyamkononi.databinding.DoctorChatBinding
+import com.example.afyamkononi.doctors.chat.DocChat
 import com.example.afyamkononi.shared.model.UserData
 
 class DoctorChatAdapter(
-    private val list: MutableList<UserData>,
+    private val chats: MutableList<DocChat>,
     val clickListener: OnChatClickListener
 ) : RecyclerView.Adapter<DoctorChatAdapter.ChatViewModel>() {
 
     inner class ChatViewModel(val doctorChatBinding: DoctorChatBinding) :
         RecyclerView.ViewHolder(doctorChatBinding.root) {
-        fun setData(chat: UserData, action: OnChatClickListener) {
+        fun setData(chat: DocChat, action: OnChatClickListener) {
             doctorChatBinding.apply {
-                name.text = chat.name
+                name.text = chat.username
+                message.text = chat.lastMessage
             }
             doctorChatBinding.root.setOnClickListener {
                 action.onChatClick(chat, adapterPosition)
@@ -36,15 +38,15 @@ class DoctorChatAdapter(
     }
 
     override fun onBindViewHolder(holder: ChatViewModel, position: Int) {
-        val chat = list[position]
+        val chat = chats[position]
         holder.setData(chat, clickListener)
     }
 
     override fun getItemCount(): Int {
-        return list.size
+        return chats.size
     }
 
     interface OnChatClickListener {
-        fun onChatClick(chat: UserData, position: Int)
+        fun onChatClick(chat: DocChat, position: Int)
     }
 }

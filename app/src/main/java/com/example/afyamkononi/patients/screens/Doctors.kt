@@ -86,7 +86,7 @@ class Doctors : AppCompatActivity(), DoctorsAdapter.OnDoctorClickListener {
 
                     if (id != null && doctorName != null && doctorProfession != null && education != null && previousRole != null && Department != null && Hospital != null && time != null && uid != null) {
                         val doctor = DoctorData(
-                            id,
+                            uid,
                             doctorName,
                             doctorProfession,
                             education,
