@@ -95,11 +95,12 @@ class MeetingsFragment : Fragment(), EventsAdapter.OnEventClickListener {
                             doctorId
                         )
                         Timber.e(event.toString())
-                        if (event.doctorId == auth.currentUser?.uid)
+                        if (event.doctorId == auth.currentUser?.uid){
                             eventArrayList.add(event)
+                            adapter.notifyDataSetChanged()
+                        }
                     }
                 }
-                adapter.notifyDataSetChanged()
 
             }
     }
