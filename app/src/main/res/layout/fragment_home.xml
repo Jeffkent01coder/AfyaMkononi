@@ -8,7 +8,6 @@
     tools:context=".patients.fragments.HomeFragment">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -28,7 +27,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="👋 Hello | Habari!"
+                    android:text="👋 Hello !!!"
                     android:textSize="20sp"
                     android:textStyle="normal" />
 
@@ -66,21 +65,21 @@
         android:layout_marginTop="90dp"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="50dp"-->
+<!--            android:orientation="horizontal">-->
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:background="@drawable/search"
-                android:iconifiedByDefault="false"
-                 />
+<!--            <androidx.appcompat.widget.SearchView-->
+<!--                android:id="@+id/searchView"-->
+<!--                android:layout_width="300dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:background="@drawable/search"-->
+<!--                android:iconifiedByDefault="false"-->
+<!--                 />-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
 
         <TextView
@@ -88,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
-            android:text="Services / Huduma"
+            android:text="Services"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textStyle="bold" />
 
@@ -117,8 +116,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:text="Doctors / Daktari"
+                    android:layout_marginTop="80dp"
+                    android:text="Doctors"
                     android:textAlignment="center"
                     android:textStyle="bold" />
 
@@ -144,8 +143,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:text="BMI / mwili molekuli"
+                    android:layout_marginTop="80dp"
+                    android:text="BMI"
                     android:textAlignment="center"
                     android:textStyle="bold" />
 
@@ -173,8 +172,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:text="Fitness / utimamu wa mwili"
+                    android:layout_marginTop="80dp"
+                    android:text="Fitness"
                     android:textAlignment="center"
                     android:textStyle="bold" />
 
@@ -200,8 +199,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:text="News / Habari"
+                    android:layout_marginTop="80dp"
+                    android:text="News"
                     android:textAlignment="center"
                     android:textStyle="bold" />
 
@@ -236,8 +235,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:text="Scan / Soma"
+                    android:layout_marginTop="80dp"
+                    android:text="Scan "
                     android:textAlignment="center"
                     android:textStyle="bold" />
 
@@ -256,16 +255,16 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/ai" />
+                    android:layout_height="70dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:src="@drawable/comments" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:text="Ai / akili ya bandia"
+                    android:layout_marginTop="70dp"
+                    android:text="Chat With Doctors"
                     android:textAlignment="center"
                     android:textStyle="bold" />
 
@@ -292,8 +291,36 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:text="Clinics / zahanati"
+                    android:layout_marginTop="80dp"
+                    android:text="Clinics"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ai"
+                android:layout_width="80dp"
+                android:layout_height="130dp"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                card_view:cardElevation="4dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ai" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:text="AI Agent"
                     android:textAlignment="center"
                     android:textStyle="bold" />
 
