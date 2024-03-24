@@ -11,11 +11,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.afyamkononi.R
-import com.example.afyamkononi.shared.adapters.EventsAdapter
-import com.example.afyamkononi.shared.chatMongo.ListDoctors
 import com.example.afyamkononi.databinding.FragmentHomeBinding
+import com.example.afyamkononi.patients.ai.screens.Ai
 import com.example.afyamkononi.patients.machineLearning.PreviousScans
 import com.example.afyamkononi.patients.screens.*
+import com.example.afyamkononi.shared.adapters.EventsAdapter
+import com.example.afyamkononi.shared.chatMongo.ListDoctors
 import com.example.afyamkononi.shared.model.EventData
 import com.example.afyamkononi.shared.model.UserData
 import com.google.firebase.Firebase
@@ -72,11 +73,17 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
             val intent = Intent(requireActivity(), Doctors::class.java)
             startActivity(intent)
         }
+
+
         binding.chat.setOnClickListener {
             val intent = Intent(requireActivity(), ListDoctors::class.java)
             startActivity(intent)
         }
 
+        binding.ai.setOnClickListener {
+            val intent = Intent(requireActivity(), Ai::class.java)
+            startActivity(intent)
+        }
 
 
         binding.fitness.setOnClickListener {

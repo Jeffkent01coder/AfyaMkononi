@@ -1,38 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".patients.screens.Doctors">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            />
+            android:src="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Doctors /  Madaktari"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:layout_marginTop="10dp"
-            />
+            android:text="Doctors "
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="20sp" />
 
     </LinearLayout>
-
 
 
     <LinearLayout
@@ -42,35 +38,30 @@
         android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
-        <SearchView
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:background="@drawable/search"
             android:iconifiedByDefault="false"
-            android:queryHint="Search Here /  Tafuta...." />
+            android:queryHint="Search Here..." />
 
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Available Doctors / Madaktari"
-        android:layout_marginTop="15dp"
         android:layout_marginStart="5dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        />
+        android:layout_marginTop="15dp"
+        android:text="Available Doctors"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/doctorsRecyler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/doctor_item"
-        />
-
-
-
+        tools:listitem="@layout/doctor_item" />
 
 
 </LinearLayout>
