@@ -12,6 +12,6 @@ interface ApiService {
        // @Query("country") country: String = "co",
         @Query("pageSize") pageSize: Int = 100,
         @Query("category") category: String = "health",
-        @Query("apiKey") apiKey: String = "40d44753106d4584929803ce5e09cb98"
+        @Query("apiKey") apiKey: String = ""
     ): NewsResult
 }

@@ -8,7 +8,7 @@ interface ApiExerciseService{
     @GET("/exercises")
     suspend fun getExercises(
         @Query("limit") limit: Int = 10,
-        @Query("rapidapi-key") apiKey: String = "37464653damsh941e7c9227e0bf9p1b0871jsnbe2ddf38abba"
+        @Query("rapidapi-key") apiKey: String = ""
     ): ApiExerciseResponse
 }
 
