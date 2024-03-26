@@ -11,6 +11,13 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
+<!--        <Button-->
+<!--            android:id="@+id/users"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="myusers"-->
+<!--            />-->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,7 +29,7 @@
             />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/doctorChatListRecyclerView"
+            android:id="@+id/doctorChatsListRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/doctor_chat"

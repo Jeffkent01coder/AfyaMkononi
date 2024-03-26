@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.afyamkononi.databinding.DoctorChatBinding
 import com.example.afyamkononi.doctors.chat.DocChat
-import com.example.afyamkononi.shared.model.UserData
 
 class DoctorChatAdapter(
     private val chats: MutableList<DocChat>,
@@ -17,7 +16,6 @@ class DoctorChatAdapter(
         fun setData(chat: DocChat, action: OnChatClickListener) {
             doctorChatBinding.apply {
                 name.text = chat.username
-                message.text = chat.lastMessage
             }
             doctorChatBinding.root.setOnClickListener {
                 action.onChatClick(chat, adapterPosition)

@@ -48,7 +48,7 @@ class ListDoctors : AppCompatActivity(), DoctorsChatAdapter.OnDoctorClickListene
 
     override fun onDoctorClick(doctor: DoctorData, position: Int) {
         val intent = Intent(this, Chat::class.java)
-        intent.putExtra("id", doctor.id)
+        intent.putExtra("id", doctor.uid)
         intent.putExtra("doctorName", doctor.doctorName)
         intent.putExtra("doctorProfession", doctor.doctorProfession)
         startActivity(intent)
