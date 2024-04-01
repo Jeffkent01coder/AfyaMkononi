@@ -33,7 +33,7 @@ class ScanResult : AppCompatActivity() {
 
     private val retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl("192.168.0.114:5000") // Replace with your Flask API URL
+            .baseUrl("http://192.168.0.114:5000") // Replace with your Flask API URL
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
