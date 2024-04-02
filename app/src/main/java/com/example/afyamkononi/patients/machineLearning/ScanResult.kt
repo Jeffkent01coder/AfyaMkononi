@@ -55,6 +55,7 @@ class ScanResult : AppCompatActivity() {
         binding.btnSend.setOnClickListener {
             uploadImage()
         }
+
     }
 
     private fun dispatchTakePictureIntent() {

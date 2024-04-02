@@ -83,13 +83,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".patients.machineLearning.PreviousScans"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".shared.chatMongo.ListDoctors"
             android:exported="false">
             <meta-data

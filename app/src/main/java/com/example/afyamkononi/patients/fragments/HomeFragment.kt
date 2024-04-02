@@ -12,10 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.afyamkononi.databinding.FragmentHomeBinding
 import com.example.afyamkononi.patients.ai.screens.Ai
-import com.example.afyamkononi.patients.machineLearning.PreviousScans
+import com.example.afyamkononi.patients.machineLearning.ScanResult
 import com.example.afyamkononi.patients.screens.*
 import com.example.afyamkononi.shared.adapters.EventsAdapter
-import com.example.afyamkononi.shared.chatMongo.ListDoctors
 import com.example.afyamkononi.shared.fire.screens.userside.MyDoctors
 import com.example.afyamkononi.shared.model.EventData
 import com.example.afyamkononi.shared.model.UserData
@@ -66,7 +65,7 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
             startActivity(Intent(requireActivity(), BmiCalculator::class.java))
         }
         binding.machineLearning.setOnClickListener {
-            startActivity(Intent(requireActivity(), PreviousScans::class.java))
+            startActivity(Intent(requireActivity(), ScanResult::class.java))
         }
         // Set click listeners for other UI elements
         binding.news.setOnClickListener {
