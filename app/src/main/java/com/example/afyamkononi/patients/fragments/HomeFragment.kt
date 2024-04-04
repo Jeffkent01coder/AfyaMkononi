@@ -1,26 +1,34 @@
 package com.example.afyamkononi.patients.fragments
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.afyamkononi.R
 import com.example.afyamkononi.databinding.FragmentHomeBinding
+import com.example.afyamkononi.mpesa.ApiResponse
+import com.example.afyamkononi.mpesa.retrofit.ApiService
+import com.example.afyamkononi.mpesa.retrofit.RetrofitClient
 import com.example.afyamkononi.patients.ai.screens.Ai
-import com.example.afyamkononi.patients.machineLearning.PreviousScans
+import com.example.afyamkononi.patients.machineLearning.ScanResult
 import com.example.afyamkononi.patients.screens.*
 import com.example.afyamkononi.shared.adapters.EventsAdapter
-import com.example.afyamkononi.shared.chatMongo.ListDoctors
 import com.example.afyamkononi.shared.fire.screens.userside.MyDoctors
 import com.example.afyamkononi.shared.model.EventData
 import com.example.afyamkononi.shared.model.UserData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
@@ -44,6 +52,11 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        binding.buttonDonate.setOnClickListener {
+            showDonationDialog()
+        }
+
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().reference.child("UpcomingEvents")
 
@@ -66,7 +79,7 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
             startActivity(Intent(requireActivity(), BmiCalculator::class.java))
         }
         binding.machineLearning.setOnClickListener {
-            startActivity(Intent(requireActivity(), PreviousScans::class.java))
+            startActivity(Intent(requireActivity(), ScanResult::class.java))
         }
         // Set click listeners for other UI elements
         binding.news.setOnClickListener {
@@ -107,7 +120,8 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
         val userId = currentUser?.uid
 
         if (userId != null) {
-            val userRef = FirebaseDatabase.getInstance().getReference("registeredUser").child(userId)
+            val userRef =
+                FirebaseDatabase.getInstance().getReference("registeredUser").child(userId)
             userRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
@@ -127,7 +141,11 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
 
                 override fun onCancelled(error: DatabaseError) {
                     Timber.e("Failed to fetch user data: ${error.message}")
-                    Toast.makeText(requireContext(), "Failed to fetch user data", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "Failed to fetch user data",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             })
         } else {
@@ -197,7 +215,50 @@ class HomeFragment : Fragment(), EventsAdapter.OnEventClickListener {
         return date1.after(date2)
     }
 
+    private fun showDonationDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_donate, null)
+        val editTextPhoneNumber = dialogView.findViewById<EditText>(R.id.editTextPhoneNumber)
+        val editTextAmount = dialogView.findViewById<EditText>(R.id.editTextAmount)
 
+        AlertDialog.Builder(context)
+            .setView(dialogView)
+            .setPositiveButton("Donate") { dialog, _ ->
+                val phoneNumber = editTextPhoneNumber.text.toString()
+                val amount = editTextAmount.text.toString()
 
+                // Call your API using Retrofit
+                makeDonation(phoneNumber, amount)
+
+                dialog.dismiss()
+            }
+            .setNegativeButton("Cancel") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+
+    private fun makeDonation(amount: String, phone: String) {
+        val apiService = RetrofitClient.apiService
+        val call = apiService.pay(phone,amount )
+        call.enqueue(object : Callback<ApiResponse> {
+            override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+                if (response.isSuccessful) {
+                    val message = response.body()?.message ?: "Donation Successful"
+                    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(requireContext(), "Failed to make donation", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+
+            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                Toast.makeText(
+                    requireContext(),
+                    "Failed to make donation: ${t.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
+    }
 
 }

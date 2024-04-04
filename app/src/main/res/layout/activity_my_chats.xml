@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:background="#4CAF50"
+        android:background="#1c6ba4"
         android:orientation="horizontal"
         android:layout_marginTop="3dp"
         android:layout_marginHorizontal="20dp"
@@ -57,7 +57,7 @@
         <Button
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
-            android:backgroundTint="#4CAF50"
+            android:backgroundTint="#1c6ba4"
             android:layout_height="wrap_content"
             android:text="Send"/>
     </LinearLayout>
