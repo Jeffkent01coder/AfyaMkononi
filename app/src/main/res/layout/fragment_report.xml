@@ -199,52 +199,21 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Activity"
+            android:text="View Statistical Report"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:layout_marginStart="20dp"
             />
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btnReport"
             android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1c6ba4"
+            android:text="Statistical Report"
+            android:layout_marginHorizontal="100dp"
+            />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text= "Up-Coming Events : "
-                android:layout_marginStart="30dp"
-                />
-            <TextView
-                android:id="@+id/upcomingEvents"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text= "20"
-                android:layout_marginStart="30dp"
-                />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text= "Past Events : "
-                android:layout_marginStart="30dp"
-                />
-            <TextView
-                android:id="@+id/pastEvents"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text= "20"
-                android:layout_marginStart="30dp"
-                />
-
-        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"

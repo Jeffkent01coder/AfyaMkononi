@@ -1,6 +1,7 @@
 package com.example.afyamkononi.patients.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.afyamkononi.databinding.FragmentReportBinding
+import com.example.afyamkononi.patients.report.Reports
 import com.example.afyamkononi.shared.adapters.EventsAdapter
 import com.example.afyamkononi.shared.model.BMIData
 import com.example.afyamkononi.shared.model.EventData
@@ -39,6 +41,11 @@ class ReportFragment : Fragment(), EventsAdapter.OnEventClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnReport.setOnClickListener {
+            val intent =Intent(requireActivity(), Reports::class.java)
+            startActivity(intent)
+        }
 
         auth = FirebaseAuth.getInstance()
 
