@@ -1,0 +1,361 @@
+{
+  "diseases_count": 103,
+  "diseases": [
+    {
+      "name": "Cold",
+      "symptoms": ["runny nose", "sneezing", "sore throat"]
+    },
+    {
+      "name": "Flu",
+      "symptoms": ["fever", "cough", "body aches"]
+    },
+    {
+      "name": "Allergy",
+      "symptoms": ["itchy eyes", "rash", "nasal congestion"]
+    },
+    {
+      "name": "Migraine",
+      "symptoms": ["headache", "nausea", "sensitivity to light"]
+    },
+    {
+      "name": "Asthma",
+      "symptoms": ["wheezing", "shortness of breath", "chest tightness"]
+    },
+    {
+      "name": "Bronchitis",
+      "symptoms": ["cough", "fatigue", "shortness of breath"]
+    },
+    {
+      "name": "Pneumonia",
+      "symptoms": ["fever", "chills", "cough with phlegm"]
+    },
+    {
+      "name": "Tuberculosis",
+      "symptoms": ["persistent cough", "weight loss", "night sweats"]
+    },
+    {
+      "name": "Diabetes",
+      "symptoms": ["increased thirst", "frequent urination", "fatigue"]
+    },
+    {
+      "name": "Hypertension",
+      "symptoms": ["headache", "dizziness", "blurred vision"]
+    },
+    {
+      "name": "Hyperthyroidism",
+      "symptoms": ["weight loss", "rapid heartbeat", "excessive sweating"]
+    },
+    {
+      "name": "Hypothyroidism",
+      "symptoms": ["weight gain", "fatigue", "dry skin"]
+    },
+    {
+      "name": "Anemia",
+      "symptoms": ["fatigue", "pale skin", "shortness of breath"]
+    },
+    {
+      "name": "Chronic Kidney Disease",
+      "symptoms": ["fatigue", "swelling in ankles", "changes in urination"]
+    },
+    {
+      "name": "Hepatitis",
+      "symptoms": ["jaundice", "fatigue", "abdominal pain"]
+    },
+    {
+      "name": "Peptic Ulcer",
+      "symptoms": ["abdominal pain", "bloating", "nausea"]
+    },
+    {
+      "name": "Gastritis",
+      "symptoms": ["abdominal pain", "nausea", "vomiting"]
+    },
+    {
+      "name": "Gastroenteritis",
+      "symptoms": ["nausea", "vomiting", "diarrhea"]
+    },
+    {
+      "name": "Diverticulitis",
+      "symptoms": ["abdominal pain", "fever", "constipation"]
+    },
+    {
+      "name": "Celiac Disease",
+      "symptoms": ["diarrhea", "bloating", "weight loss"]
+    },
+    {
+      "name": "Crohn's Disease",
+      "symptoms": ["abdominal pain", "diarrhea", "weight loss"]
+    },
+    {
+      "name": "Ulcerative Colitis",
+      "symptoms": ["abdominal pain", "bloody diarrhea", "urgency to defecate"]
+    },
+    {
+      "name": "Rheumatoid Arthritis",
+      "symptoms": ["joint pain", "swelling", "stiffness"]
+    },
+    {
+      "name": "Osteoarthritis",
+      "symptoms": ["joint pain", "stiffness", "swelling"]
+    },
+    {
+      "name": "Gout",
+      "symptoms": ["joint pain", "swelling", "redness"]
+    },
+    {
+      "name": "Fibromyalgia",
+      "symptoms": ["widespread pain", "fatigue", "sleep disturbances"]
+    },
+    {
+      "name": "Lupus",
+      "symptoms": ["joint pain", "fatigue", "skin rash"]
+    },
+    {
+      "name": "Multiple Sclerosis",
+      "symptoms": ["fatigue", "weakness", "numbness or tingling"]
+    },
+    {
+      "name": "Parkinson's Disease",
+      "symptoms": ["tremors", "stiffness", "slowed movement"]
+    },
+    {
+      "name": "Alzheimer's Disease",
+      "symptoms": ["memory loss", "confusion", "difficulty in problem-solving"]
+    },
+    {
+      "name": "Depression",
+      "symptoms": ["persistent sadness", "loss of interest", "fatigue"]
+    },
+    {
+      "name": "Anxiety Disorders",
+      "symptoms": ["excessive worry", "restlessness", "irritability"]
+    },
+    {
+      "name": "Panic Disorder",
+      "symptoms": ["panic attacks", "sweating", "chest pain"]
+    },
+    {
+      "name": "Bipolar Disorder",
+      "symptoms": ["mood swings", "high energy", "reckless behavior"]
+    },
+    {
+      "name": "Schizophrenia",
+      "symptoms": ["hallucinations", "delusions", "disorganized thinking"]
+    },
+    {
+      "name": "Obsessive-Compulsive Disorder",
+      "symptoms": ["obsessions", "compulsions", "anxiety"]
+    },
+    {
+      "name": "Attention Deficit Hyperactivity Disorder",
+      "symptoms": ["inattention", "hyperactivity", "impulsivity"]
+    },
+    {
+      "name": "Autism Spectrum Disorder",
+      "symptoms": ["social difficulties", "communication challenges", "repetitive behaviors"]
+    },
+    {
+      "name": "Epilepsy",
+      "symptoms": ["seizures", "temporary confusion", "uncontrollable jerking movements"]
+    },
+    {
+      "name": "Stroke",
+      "symptoms": ["sudden numbness", "confusion", "difficulty speaking"]
+    },
+    {
+      "name": "Heart Attack",
+      "symptoms": ["chest pain", "shortness of breath", "nausea"]
+    },
+    {
+      "name": "Peripheral Artery Disease",
+      "symptoms": ["leg pain", "numbness", "weakness"]
+    },
+    {
+      "name": "Atrial Fibrillation",
+      "symptoms": ["irregular heartbeat", "chest pain", "fatigue"]
+    },
+    {
+      "name": "Coronary Artery Disease",
+      "symptoms": ["chest pain", "shortness of breath", "fatigue"]
+    },
+    {
+      "name": "Congestive Heart Failure",
+      "symptoms": ["shortness of breath", "fatigue", "swelling in ankles"]
+    },
+    {
+      "name": "Chronic Obstructive Pulmonary Disease",
+      "symptoms": ["shortness of breath", "chronic cough", "wheezing"]
+    },
+    {
+      "name": "Sleep Apnea",
+      "symptoms": ["loud snoring", "gasping for air during sleep", "excessive daytime sleepiness"]
+    },
+    {
+      "name": "Insomnia",
+      "symptoms": ["difficulty falling asleep", "waking up too early", "non-refreshing sleep"]
+    },
+    {
+      "name": "Restless Legs Syndrome",
+      "symptoms": ["urge to move legs", "uncomfortable sensations", "worsening symptoms at night"]
+    },
+    {
+      "name": "Cirrhosis",
+      "symptoms": ["fatigue", "abdominal swelling", "easy bruising"]
+    },
+    {
+      "name": "Pancreatitis",
+      "symptoms": ["abdominal pain", "nausea", "vomiting"]
+    },
+    {
+      "name": "Gallstones",
+      "symptoms": ["abdominal pain", "nausea", "vomiting"]
+    },
+    {
+      "name": "Hemorrhoids",
+      "symptoms": ["rectal pain", "bleeding during bowel movements", "itching"]
+    },
+    {
+      "name": "Hernia",
+      "symptoms": ["bulge in the groin", "pain or discomfort", "weakness or pressure"]
+    },
+    {
+      "name": "Urinary Tract Infection",
+      "symptoms": ["frequent urination", "burning sensation", "cloudy or bloody urine"]
+    },
+    {
+      "name": "Kidney Stones",
+      "symptoms": ["severe pain in the side", "blood in urine", "nausea"]
+    },
+    {
+      "name": "Bladder Infection",
+      "symptoms": ["frequent urination", "burning sensation", "cloudy or bloody urine"]
+    },
+    {
+      "name": "Prostate Problems",
+      "symptoms": ["frequent urination", "difficulty urinating", "pain or burning sensation"]
+    },
+    {
+      "name": "Endometriosis",
+      "symptoms": ["pelvic pain", "painful periods", "pain during intercourse"]
+    },
+    {
+      "name": "Ovarian Cysts",
+      "symptoms": ["pelvic pain", "bloating", "pain during intercourse"]
+    },
+    {
+      "name": "Fibroids",
+      "symptoms": ["heavy menstrual bleeding", "pelvic pressure", "frequent urination"]
+    },
+    {
+      "name": "Pelvic Inflammatory Disease",
+      "symptoms": ["pelvic pain", "abnormal vaginal discharge", "pain during intercourse"]
+    },
+    {
+      "name": "Vaginal Yeast Infection",
+      "symptoms": ["itching", "burning", "abnormal discharge"]
+    },
+    {
+      "name": "Sexually Transmitted Infections",
+      "symptoms": ["painful urination", "genital discharge", "sores or lesions"]
+    },
+    {
+      "name": "Premenstrual Syndrome",
+      "symptoms": ["mood swings", "fatigue", "bloating"]
+    },
+    {
+      "name": "Menopause",
+      "symptoms": ["hot flashes", "night sweats", "mood changes"]
+    },
+    {
+      "name": "Pregnancy",
+      "symptoms": ["missed period", "nausea", "breast tenderness"]
+    },
+    {
+      "name": "Ectopic Pregnancy",
+      "symptoms": ["abdominal pain", "vaginal bleeding", "shoulder pain"]
+    },
+    {
+      "name": "Miscarriage",
+      "symptoms": ["vaginal bleeding", "abdominal pain", "cramping"]
+    },
+    {
+      "name": "Preeclampsia",
+      "symptoms": ["high blood pressure", "swelling", "protein in urine"]
+    },
+    {
+      "name": "Anemia during Pregnancy",
+      "symptoms": ["fatigue", "pale skin", "shortness of breath"]
+    },
+    {
+      "name": "Gestational Diabetes",
+      "symptoms": ["increased thirst", "frequent urination", "fatigue"]
+    },
+    {
+      "name": "Placental Abruption",
+      "symptoms": ["vaginal bleeding", "abdominal pain", "back pain"]
+    },
+    {
+      "name": "Preterm Labor",
+      "symptoms": ["contractions", "vaginal discharge", "pelvic pressure"]
+    },
+    {
+      "name": "Postpartum Depression",
+      "symptoms": ["persistent sadness", "loss of interest", "fatigue"]
+    },
+    {
+      "name": "Postpartum Hemorrhage",
+      "symptoms": ["excessive bleeding", "abdominal pain", "fatigue"]
+    },
+    {
+      "name": "Breast Cancer",
+      "symptoms": ["lump in breast", "change in breast size or shape", "nipple discharge"]
+    },
+    {
+      "name": "Cervical Cancer",
+      "symptoms": ["abnormal vaginal bleeding", "pelvic pain", "pain during intercourse"]
+    },
+    {
+      "name": "Ovarian Cancer",
+      "symptoms": ["abdominal bloating", "pelvic pain", "loss of appetite"]
+    },
+    {
+      "name": "Uterine Cancer",
+      "symptoms": ["abnormal vaginal bleeding", "pelvic pain", "pain during intercourse"]
+    },
+    {
+      "name": "Prostate Cancer",
+      "symptoms": ["frequent urination", "difficulty urinating", "blood in semen"]
+    },
+    {
+      "name": "Testicular Cancer",
+      "symptoms": ["lump in testicle", "swelling", "pain or discomfort"]
+    },
+    {
+      "name": "Lung Cancer",
+      "symptoms": ["persistent cough", "chest pain", "shortness of breath"]
+    },
+    {
+      "name": "Colon Cancer",
+      "symptoms": ["change in bowel habits", "blood in stool", "abdominal pain"]
+    },
+    {
+      "name": "Leukemia",
+      "symptoms": ["fatigue", "weakness", "frequent infections"]
+    },
+    {
+      "name": "Non-Hodgkin Lymphoma",
+      "symptoms": ["swollen lymph nodes", "fever", "weight loss"]
+    },
+    {
+      "name": "Melanoma",
+      "symptoms": ["new skin growth", "changes in existing mole", "itchiness or pain"]
+    },
+    {
+      "name": "Basal Cell Carcinoma",
+      "symptoms": ["pearly or waxy bump", "flat, flesh-colored or brown scar-like lesion", "bleeding or oozing"]
+    },
+    {
+      "name": "Squamous Cell Carcinoma",
+      "symptoms": ["firm, red nodule", "flat sore with a scaly crust", "persistent sore or bump"]
+    }
+  ]
+}

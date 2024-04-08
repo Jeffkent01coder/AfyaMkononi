@@ -17,8 +17,8 @@
         />
     <item
         android:id="@+id/icNotifications"
-        android:icon="@drawable/notifs"
-        android:title="Notifications"
+        android:icon="@drawable/ic_baseline_sick_24"
+        android:title="Symptom Checker"
         />
 
 </menu>
